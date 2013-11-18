@@ -18,6 +18,24 @@
 
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/files/login.js"></script>
 
+<!-- javascripts for inline form validation -->
+<script src="<?php echo base_url();?>assets/js/jquery.validationEngine.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.validationEngine-en.js"></script>
+	
+<!-- javascripts for login form validation-->
+<script src="<?php echo base_url();?>assets/js/ajax_admin_login.js"></script>
+
+<script>
+	jQuery(document).ready(function()
+	{
+		// binds form submission and fields to the validation engine
+		jQuery("#login_form").validationEngine();
+		
+	});
+	
+	var baseurl =  "<?php echo base_url() ?>";
+	
+</script>
 </head>
 
 <body class="no-background">
@@ -42,22 +60,25 @@
             </div>
         </div>
         <div class="well">
-            <form action="foodmenu" class="row-fluid">
+            <!-- <form action="foodmenu" class="row-fluid"> -->
+            <?php $attributes = array('class' => 'row-fluid', 'id' => 'login_form');?>
+			<?php echo form_open('login/login_validate',$attributes);?>
                 <div class="control-group">
                     <label class="control-label">Username</label>
-                    <div class="controls"><input class="span12" type="text" name="regular" placeholder="username" /></div>
+                    <div class="controls"><input class="span12 validate[required]" type="text" name="regular" placeholder="username" id="username" /></div>
                 </div>
                 
                 <div class="control-group">
                     <label class="control-label">Password:</label>
-                    <div class="controls"><input class="span12" type="password" name="pass" placeholder="password" /></div>
+                    <div class="controls"><input class="span12 validate[required]" type="password" name="pass" placeholder="password" id="password" /></div>
                 </div>
 
                 <div class="control-group">
                     <div class="controls"><label class="checkbox inline"><input type="checkbox" name="checkbox1" class="styled" value="" checked="checked">Remember me</label></div>
                 </div>
 
-                <div class="login-btn"><input type="submit" value="Log me in" class="btn btn-danger btn-block" /></div>
+                <div class="login-btn"><input type="submit" value="Log me in" class="btn btn-danger btn-block" id="login_submit" name="login_submit"/></div>
+
             </form>
         </div>
     </div>

@@ -34,8 +34,8 @@ class Login extends CI_Controller
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
 			
-			$this->load->model('login_model');
-			$valideuser = $this->login_model->veryfy_user($username,$password);
+			$this->load->model('loginmodel');
+			$valideuser = $this->loginmodel->veryfy_user($username,$password);
 			//$valideuser = true;
 			if($valideuser == true)
 			{	
