@@ -38,7 +38,7 @@
 		<!-- Sidebar -->
 		<div id="sidebar">
 
-			<div >
+			<div>
 		        <!-- <ul class="tabs-nav two-items">
 		            <li><a href="#general" title=""><i class="icon-reorder"></i></a></li>
 		            <li><a href="#stuff" title=""><i class="icon-cogs"></i></a></li>
@@ -54,9 +54,9 @@
 
 				    <!-- Main navigation -->
 			        <ul class="navigation widget">
-			            <li class="active"><a href="<?php echo base_url();?>foodmenu" title=""><i class="icon-list"></i>Food Menu</a></li>
+			            <li ><a href="<?php echo base_url();?>foodmenu" title=""><i class="icon-list"></i>Food Menu</a></li>
 			            <li><a href="<?php echo base_url();?>newfood" title=""><i class="icon-plus-sign"></i>Add New Food</a></li>
-			            <li><a href="<?php echo base_url();?>orders" title=""><i class="icon-asterisk"></i>Orders<strong>3</strong></a></li>
+			            <li class="active" ><a href="<?php echo base_url();?>orders" title=""><i class="icon-asterisk"></i>Orders<strong>3</strong></a></li>
 			        </ul>
 			        <!-- /main navigation -->
 
@@ -67,35 +67,37 @@
 		
 	<div id="content">
 		<div class="wrapper">
-		    <h5> </h5> 
-		    <br />                  
+		    <h5> </h5>
+		    <br />           
                 <!-- Default datatable -->
                 <div class="widget">
-                	<div class="navbar"><div class="navbar-inner"><h6>Food Menu Items</h6></div></div>
+                	<div class="navbar"><div class="navbar-inner"><h6>Orders Information</h6></div></div>
                     <div class="table-overflow">
                         <table class="table table-striped table-bordered" id="data-table">
                             <thead>
                                 <tr>
-                                    <th>Food Image </th>
-                                    <th>Food Name</th>
-                                    <th>Food Price</th>
-                                    <th>Food Categoty</th>
+                                    <th>Ordered By </th>
+                                    <th>Contact</th>
+                                    <th>Items</th>
+                                    <th>Time</th>
+                                    <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                             <?php 
-                            foreach ($foodDetails as $row) 
+                            foreach ($orderDetails as $row) 
 						  	{
 						  		echo '<tr>';
-	                                echo '<td>'; echo '<img src = "'.base_url().'assets/img/foods/'.$row->food_image.'">';	echo '</td>';
-	                                echo '<td>'; echo $row->food_name; 		echo '</td>';
-	                                echo '<td>'; echo $row->food_price; 			echo '</td>';
-	                                echo '<td>'; echo $row->category_name; 	echo '</td>';
+	                                echo '<td>'; 	echo $row->ordered_by ;		echo '</td>';
+	                                echo '<td>'; 	echo $row->contact; 		echo '</td>';
+	                                echo '<td>'; 	echo $row->items; 			echo '</td>';
+	                                echo '<td>'; 	echo $row->time; 			echo '</td>';
+	                                echo '<td>'; 	echo $row->status; 			echo '</td>';
 	                                echo '<td>';
 	                                        echo '<ul class="table-controls">
-	                                            <li><a href="#" class="tip" title="Edit entry"><i class="fam-pencil"></i></a> </li>
-	                                            <li><a href="#" class="tip" title="Remove entry"><i class="fam-cross"></i></a> </li>
+	                                            <li><a href="#" class="tip" title="Delivered"><i class="fam-tick"></i></a> </li>
+	                                            <li><a href="#" class="tip" title="Remove order"><i class="fam-cross"></i></a> </li>
 	                                        </ul>';
 	                                echo  '</td>';
                                 echo '</tr>';

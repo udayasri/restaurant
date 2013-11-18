@@ -1,18 +1,15 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Foodmenu_model extends CI_Model {
+class Order_model extends CI_Model {
 
 	function __construct()
 	{
 		parent:: __construct();
 	}
 	
-	function getFoodDetails()
+	function getOrderDetails()
 	{
-		$query ="SELECT food_id, food_name,food_image,food_price,food_category, category_name
-		FROM foods 
-		LEFT JOIN category ON foods.food_category = category.category_id ; ";
-		
+		$query ="SELECT * FROM orders ; ";
 		$query_result = $this->db->query($query);
 		$data = array();
 	  	foreach($query_result->result() as $row){
