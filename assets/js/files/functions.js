@@ -169,12 +169,12 @@ $(function() {
 				end: new Date(y, m, d+1, 22, 30),
 				allDay: false
 			},
-			{
-				title: 'Click for Google',
-				start: new Date(y, m, 28),
-				end: new Date(y, m, 29),
-				url: 'http://google.com/'
-			}
+			// {
+				// title: 'Click for Google',
+				// start: new Date(y, m, 28),
+				// end: new Date(y, m, 29),
+				// url: 'http://google.com/'
+			// }
 		]
 	});
 
@@ -798,22 +798,22 @@ $(function() {
 
 	//===== Make Google maps visible inaide tabs =====//
 
-	function initialize()
-	{
-		var mapProp= {
-			center: new google.maps.LatLng(-37.814666,144.982452),
-			zoom: 12,
-			mapTypeId:google.maps.MapTypeId.ROADMAP
-		};
-		var map=new google.maps.Map(document.getElementById("google-map"),mapProp);
-
-		$('.actions').bind('easytabs:after', function() {
-			google.maps.event.trigger(map, 'resize');
-			map.setCenter(new google.maps.LatLng(-37.814666,144.982452));
-		});
-
-	};
-	google.maps.event.addDomListener(window, 'load', initialize);
+	// function initialize()
+	// {
+		// var mapProp= {
+			// center: new google.maps.LatLng(-37.814666,144.982452),
+			// zoom: 12,
+			// mapTypeId:google.maps.MapTypeId.ROADMAP
+		// };
+		// var map=new google.maps.Map(document.getElementById("google-map"),mapProp);
+// 
+		// $('.actions').bind('easytabs:after', function() {
+			// google.maps.event.trigger(map, 'resize');
+			// map.setCenter(new google.maps.LatLng(-37.814666,144.982452));
+		// });
+// 
+	// };
+	// google.maps.event.addDomListener(window, 'load', initialize);
 
 
 
