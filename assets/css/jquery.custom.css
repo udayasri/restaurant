@@ -214,7 +214,7 @@
 .ui-dialog form { text-align: center; }
 .ui-dialog .icon { padding: 1px 6px 0 0; float: left; }
 .ui-dialog p { padding: 0!important; }
-.ui-dialog .ui-dialog-titlebar { position: relative; background: #efefef;
+./*ui-dialog .ui-dialog-titlebar { position: relative; background: #efefef;
 	font-size: 14px;
 	font-weight: 600;
 	font-family: 'Open Sans', sans-serif;
@@ -224,11 +224,11 @@
 	background: -o-linear-gradient(top,  #fafafa 0%,#efefef 100%);
 	background: -ms-linear-gradient(top,  #fafafa 0%,#efefef 100%);
 	background: linear-gradient(top,  #fafafa 0%,#efefef 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#efefef',GradientType=0 );}
-.ui-dialog .ui-dialog-title { float: left; height: 38px; font-size: 16px; padding: 0 12px 0 12px; line-height: 38px; } 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#efefef',GradientType=0 );}*/
+/*.ui-dialog .ui-dialog-title { float: left; height: 38px; font-size: 16px; padding: 0 12px 0 12px; line-height: 38px; } 
 .ui-dialog .ui-dialog-titlebar-close { position: absolute; right: 10px; top: 12px; width: 16px; height: 16px; background: url(../img/elements/interface/dialog_close.png) no-repeat; }
 .ui-dialog .ui-dialog-titlebar-close span { display: block; margin: 1px; opacity: 0.6; }
-.ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus {  }
+.ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus {  }*/
 .ui-dialog .ui-dialog-content { position: relative; overflow: auto; zoom: 1; padding: 14px; background: #FAFAFA; border-bottom: 1px solid #D5D5D5; border-top: 1px solid #D5D5D5; }
 .ui-dialog .ui-dialog-buttonpane { padding: 0 12px; font-size: 11px; background: #f5f5f5; }
 .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset { text-align: center; margin: 0 2px; }

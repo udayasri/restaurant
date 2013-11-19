@@ -2,6 +2,7 @@
 <!--[if IE 8]><link href="<?php echo base_url(); ?>assets/css/ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
 <!--[if IE 9]><link href="<?php echo base_url(); ?>assets/css/ie9.css" rel="stylesheet" type="text/css" /><![endif]-->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>

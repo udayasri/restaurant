@@ -6,12 +6,107 @@
 <title>Macdonald Admin Panel</title>
 
 <?php include 'header.php';?>
+<style type="text/css">
+
+#dialog
+{
+	display: none;
+	width: 300px; 
+}
+#edit_user
+{
+	display: none;
+	width: 300px; 
+}
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
+.select2-container 
+{
+	display: block;
+}
+.uploader
+{
+	display:block;
+}
+</style>
+
+
+<script>
+	// -- This function will pop up the edituser dialogbox & pass data to the model using ajax 
+	$("#edit_food").live("click",function()
+	{
+		
+		//This will get the values of the user_name & the user_type when user click the edit icon using js.
+		$("#data-table tbody").delegate("tr", "click", function() 
+		{
+			var firstCellText = $(this).closest('tr').find('td:eq(0)').text();
+			var secondCellText = $(this).closest('tr').find('td:eq(1)').text();
+			var thirdCellText = $(this).closest('tr').find('td:eq(2)').text();
+			var fourthCellText = $(this).closest('tr').find('td:eq(3)').text();
+			
+			$("#food_name").val(secondCellText);
+			$("#food_price").val(thirdCellText);
+			$("#food_category option:contains(" + fourthCellText + ")").attr('selected', 'selected'); //set the combo box selected value.
+			 
+		} );
+		
+		//pop up the edituser jquery dialog box	
+		$( "#editfood_info" ).dialog
+		( {
+			resizable: false,
+		    modal: true,
+		    title:"Edit the Food",
+		    width:600,
+			buttons: 
+					[
+					    {
+					      text: "Save " ,
+					      click: function() 
+					      {
+						      var user_name = $("#user_name_edit").val();
+					  		  var account_type = $("#i_account_type_edit").val();
+	
+					  		  if( user_name == '' )
+					  		  {
+						  		  
+					  			$("#insert_user_edit").css("display" , "block");
+						  	   }
+					  		  else
+					  		  {
+		
+						  		  $.ajax({
+							             type:"post",
+							             url: "vfvdfv",
+							             data: "user_name=" + user_name + "&account_type=" + account_type,
+							             success:function(data)
+							             {
+											location.reload();
+							  			 
+							             }
+							         });
+					  		  }
+					      	}
+					    },
+					    {
+					    	text: " Cancel",
+			  		     	click: function() 
+			  		     	{	
+			      		     	$( this ).dialog( "close" );
+			  		    	}   
+		  		 		}
+			  		]
+			});	
+	});
+</script>
+
 
 
 </head>
 
-<body>
 
+<body>
+<?php print_r($_SESSION);?>
 	<!-- Fixed top -->
 	<div id="top">
 		<div class="fixed">
@@ -94,7 +189,7 @@
 	                                echo '<td>'; echo $row->category_name; 	echo '</td>';
 	                                echo '<td>';
 	                                        echo '<ul class="table-controls">
-	                                            <li><a href="#" class="tip" title="Edit entry"><i class="fam-pencil"></i></a> </li>
+	                                            <li><a href="#" class="tip" title="Edit Food" id = "edit_food"><i class="fam-pencil"></i></a> </li>
 	                                            <li><a href="#" class="tip" title="Remove entry"><i class="fam-cross"></i></a> </li>
 	                                        </ul>';
 	                                echo  '</td>';
@@ -122,6 +217,50 @@
 		</ul> -->
 	</div>
 	<!-- /footer -->
+	
+	
+	<!-- edit food info up content div -->
+	<div id="editfood_info" >
+		<!-- form statrts  -->
+		<form class="form-horizontal" action="#">
+			<fieldset>
+				<div class="widget row-fluid">
+				    <div class="well">
+						<div class="control-group">
+					            <label class="control-label">Food Name</label>
+					            <div class="controls"><input type="text" id="food_name" name="regular" class="span12" /></div>
+					    </div>
+					    <div class="control-group">
+					            <label class="control-label">Food Price</label>
+					            <div class="controls"><input type="text" name="regular" class="span12" id="food_price" /></div>
+					    </div>
+					    <div class="control-group">
+	                        <label class="control-label">Food Category</label>
+	                        <div class="controls">
+	                            <select data-placeholder="Food Category" class="select" tabindex="2" id="food_category">
+	                                <option value="Favourite">Favourite</option> 
+	                                <option value="Breakfast">Breakfast</option> 
+	                                <option value="Deserts">Deserts</option> 
+	                                <option value="Beverages">Beverages</option> 
+	                            </select>
+	                        </div>             
+	                    </div>
+	                    <div class="control-group">
+	                        <label class="control-label">Food Image </label>
+	                        <div class="controls">
+	                            <input type="file" class="styled">
+	                        </div>
+	                    </div>
+	                    
+	                    <!-- <div class="form-actions">
+	                        <button type="submit" class="btn btn-primary">Save</button>
+	                    </div> -->
+	                    
+	                </div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
 
 </body>
 </html>
