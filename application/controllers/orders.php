@@ -12,11 +12,18 @@ class Orders extends CI_Controller
 	// This will load newfood_view
 	public function index()
 	{
-		$this->load->model('order_model');
-	
-		$this->view_data['orderDetails'] = $this->order_model->getOrderDetails();
+		if( $this->session->userdata('username') != null )
+		{
+			$this->load->model('order_model');
 		
-		$this->load->view( 'orders_view.php',$this->view_data );
+			$this->view_data['orderDetails'] = $this->order_model->getOrderDetails();
+			
+			$this->load->view( 'orders_view.php',$this->view_data );
+		}
+		else
+		{
+			redirect('login');
+		}
 	}
 	
 }

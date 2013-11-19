@@ -10,7 +10,14 @@ class Newfood extends CI_Controller
 	// This will load newfood_view
 	public function index()
 	{
-		$this->load->view( 'newfood_view.php' );
+		if( $this->session->userdata('username') != null )
+		{
+			$this->load->view( 'newfood_view.php' );
+		}
+		else
+		{
+			redirect('login');
+		}
 	}
 	
 }

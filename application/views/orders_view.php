@@ -21,10 +21,10 @@
 			<ul class="top-menu">
 				<li><a class="fullview"></a></li>
 				<li class="dropdown">
-					<a class="user-menu" data-toggle="dropdown"><span>Hi, Admin <b class="caret"></b></span></a>
+					<a class="user-menu" data-toggle="dropdown"><span>Hi, <?php echo $this->session->userdata('username');?> <b class="caret"></b></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#" title=""><i class="icon-user"></i>Profile</a></li>
-						<li><a href="#" title=""><i class="icon-remove"></i>Logout</a></li>
+						<!-- <li><a href="#" title=""><i class="icon-user"></i>Profile</a></li> -->
+						<li><a href="<?php echo base_url();?>login/log_out" ><i class="icon-remove"></i>Logout</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -48,7 +48,7 @@
 
 			        <!-- Sidebar user -->
 			        <div class="sidebar-user widget">
-						<div class="navbar"><div class="navbar-inner"><h6>Hi, Admin !</h6></div></div>
+						<div class="navbar"><div class="navbar-inner"><h6>Hi, <?php echo $this->session->userdata('username');?> !</h6></div></div>
 			            
 			        </div>
 

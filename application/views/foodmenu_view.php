@@ -13,10 +13,14 @@
 	display: none;
 	width: 300px; 
 }
-#edit_user
+#editfood_info
 {
 	display: none;
-	width: 300px; 
+	/*width: 300px;*/ 
+}
+#deletefood_info
+{
+	display: none;
 }
 .no-close .ui-dialog-titlebar-close {
   display: none;
@@ -100,13 +104,78 @@
 	});
 </script>
 
+<script>
+	$("#delete_food").live("click",function()
+	{
+		//This will get the values of the user_name & the user_type when user click the edit icon using js.
+		$("#data-table tbody").delegate("tr", "click", function() 
+		{
+			var firstCellText = $(this).closest('tr').find('td:eq(0)').text();
+			var secondCellText = $(this).closest('tr').find('td:eq(1)').text();
+			var thirdCellText = $(this).closest('tr').find('td:eq(2)').text();
+			var fourthCellText = $(this).closest('tr').find('td:eq(3)').text();
+			
+			$("#food_name").val(secondCellText);
+			$("#food_price").val(thirdCellText);
+			$("#food_category option:contains(" + fourthCellText + ")").attr('selected', 'selected'); //set the combo box selected value.
+			 
+		} );
+	
+		//pop up the edituser jquery dialog box	
+		$("#deletefood_info").dialog
+		( {
+			resizable: false,
+		    modal: true,
+		    title:"Delete Food Item",
+		    width:600,
+			buttons: 
+					[
+					    {
+					      text: "Yes " ,
+					      click: function() 
+					      {
+						      var user_name = $("#user_name_edit").val();
+					  		  var account_type = $("#i_account_type_edit").val();
+	
+					  		  if( user_name == '' )
+					  		  {
+						  		  
+					  			$("#insert_user_edit").css("display" , "block");
+						  	   }
+					  		  else
+					  		  {
+		
+						  		  $.ajax({
+							             type:"post",
+							             url: "vfvdfv",
+							             data: "user_name=" + user_name + "&account_type=" + account_type,
+							             success:function(data)
+							             {
+											location.reload();
+							  			 
+							             }
+							         });
+					  		  }
+					      	}
+					    },
+					    {
+					    	text: " No",
+			  		     	click: function() 
+			  		     	{	
+			      		     	$( this ).dialog( "close" );
+			  		    	}   
+		  		 		}
+			  		]
+			});	
+		
+	});
+</script>
 
 
 </head>
 
 
 <body>
-<?php print_r($_SESSION);?>
 	<!-- Fixed top -->
 	<div id="top">
 		<div class="fixed">
@@ -116,10 +185,10 @@
 			<ul class="top-menu">
 				<li><a class="fullview"></a></li>
 				<li class="dropdown">
-					<a class="user-menu" data-toggle="dropdown"><span>Hi, Admin <b class="caret"></b></span></a>
+					<a class="user-menu" data-toggle="dropdown"><span>Hi, <?php echo $this->session->userdata('username');?> <b class="caret"></b></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#" title=""><i class="icon-user"></i>Profile</a></li>
-						<li><a href="#" title=""><i class="icon-remove"></i>Logout</a></li>
+						<!-- <li><a href="#" title=""><i class="icon-user"></i>Profile</a></li> -->
+						<li><a href="<?php echo base_url();?>login/log_out" ><i class="icon-remove"></i>Logout</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -143,7 +212,7 @@
 
 			        <!-- Sidebar user -->
 			        <div class="sidebar-user widget">
-						<div class="navbar"><div class="navbar-inner"><h6>Hi, Admin !</h6></div></div>
+						<div class="navbar"><div class="navbar-inner"><h6>Hi, <?php echo $this->session->userdata('username');?> !</h6></div></div>
 			            
 			        </div>
 
@@ -190,7 +259,7 @@
 	                                echo '<td>';
 	                                        echo '<ul class="table-controls">
 	                                            <li><a href="#" class="tip" title="Edit Food" id = "edit_food"><i class="fam-pencil"></i></a> </li>
-	                                            <li><a href="#" class="tip" title="Remove entry"><i class="fam-cross"></i></a> </li>
+	                                            <li><a href="#" class="tip" title="Remove Food" id = "delete_food" ><i class="fam-cross"></i></a> </li>
 	                                        </ul>';
 	                                echo  '</td>';
                                 echo '</tr>';
@@ -260,6 +329,10 @@
 				</div>
 			</fieldset>
 		</form>
+	</div>
+	
+	<div id="deletefood_info">
+	  <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>Do you want to delete this food item ? </p>
 	</div>
 
 </body>

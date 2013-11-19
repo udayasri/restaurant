@@ -12,11 +12,19 @@ class Foodmenu extends CI_Controller
 	// This will food menu table page
 	public function index()
 	{
-		$this->load->model('foodmenu_model');
+		if( $this->session->userdata('username') != null )
+		{
+			$this->load->model('foodmenu_model');
 	
-		$this->view_data['foodDetails'] = $this->foodmenu_model->getFoodDetails();
+			$this->view_data['foodDetails'] = $this->foodmenu_model->getFoodDetails();
+			
+			$this->load->view( 'foodmenu_view.php' , $this->view_data );
+		}
+		else
+		{
+			redirect('login'); 
+		}
 		
-		$this->load->view( 'foodmenu_view.php' , $this->view_data );
 	}
 	
 }
