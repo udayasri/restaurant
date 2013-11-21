@@ -56,21 +56,44 @@ class Loginmodel extends CI_Model {
 	
 	function user_register($user_name, $userType, $fullName, $email, $contactNum, $password){
 		
-	$data = array(
-			'user_name' => $user_name,
-			'user_password' => $password,
-			'full_name'=>$fullName,
-			'email'=>$email,
-			'contact_number'=>$contactNum,
-			'user_type'=>$userType,
-			'status'=>1
-	);
-	
-			$this->db->insert('users', $data);
-	
-			return true;
+		$data = array(
+				'user_name' => $user_name,
+				'user_password' => $password,
+				'full_name'=>$fullName,
+				'email'=>$email,
+				'contact_number'=>$contactNum,
+				'user_type'=>$userType,
+				'status'=>1
+		);
+		
+				$this->db->insert('users', $data);
+		
+				return true;
+	}
+	//get the last logged time
+	function getlastloggedtime( $user_id )
+	{
+		$query ="SELECT  logged_time
+		FROM users Where user_id =".$user_id ;
+		$query_result = $this->db->query($query);
+		$data = array();
+	  	foreach($query_result->result() as $row){
+	  		$data[] = $row;
+	  	}
+	  	return $data;
 	}
 	
+	// This will add logged time to the user table 
+	function addlogtime( $query )
+	{
+		$result = $this->db->query( $query );
+		if($result == true){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
 	
 }
 ?>

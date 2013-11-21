@@ -48,7 +48,10 @@
 
 			        <!-- Sidebar user -->
 			        <div class="sidebar-user widget">
-						<div class="navbar"><div class="navbar-inner"><h6>Hi, <?php echo $this->session->userdata('username');?> !</h6></div></div>
+						<div class="navbar"><div class="navbar-inner"><h6>Hi, <?php echo $this->session->userdata('username');?> !</h6>
+							<br />
+							<h6>Last Logged Time : <?php echo $this->session->userdata('lastloggedTime') ; ?></h6>
+						</div></div>
 			            
 			        </div>
 

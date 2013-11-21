@@ -36,10 +36,30 @@ class Login extends CI_Controller
 			
 			$this->load->model('loginmodel');
 			$valideuser = $this->loginmodel->veryfy_user($username,$password);
-			//$valideuser = true;
+			$userinfo = $valideuser->result_array();
+
 			if($valideuser == true)
-			{	
-				$this->session->set_userdata('username', $username );
+			{
+				$userinfo = $valideuser->result_array();
+			 
+				foreach ($userinfo as $row) 
+				{
+					 $userid = $row['user_id'];
+					 
+				}
+				$this->session->set_userdata( 'user_id', $userid );
+				$this->session->set_userdata( 'username', $username );
+				
+							
+				//get  the last logged times
+				$lastloggedtime = $this->loginmodel->getlastloggedtime( $userid );
+				$this->session->set_userdata( 'lastloggedTime', $lastloggedtime[0]->logged_time );
+				
+				//add new logged time to the db 
+				$query = "UPDATE `users`  SET `logged_time`= '".date("Y-m-d H:i:s")."' WHERE `user_id`=".$this->session->userdata('user_id');
+					
+				$this->loginmodel->addlogtime( $query );
+				
 				echo '{"validation_result": "passed"}'; //if user is a valid user send json data to ajax_admin_login.js
 				
 			}
