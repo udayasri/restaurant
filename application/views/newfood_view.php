@@ -7,7 +7,12 @@
 
 <?php include 'header.php';?>
 
+<script type="text/javascript" src="<?php echo base_url()?>assets/js/live_thumbnails.js"></script>
 
+<style>
+	
+	.del{ display:none; position:relative; z-index:200; float:left}
+</style>
 </head>
 
 <body>
@@ -75,7 +80,9 @@
 		    	<br />
 		    	
 				<!-- form statrts  -->
-	 			<form class="form-horizontal" action="#">
+	 			<!-- <form class="form-horizontal" action="#"> -->
+	 				<?php echo form_open_multipart(base_url().'newfood/upload_foodinfo','id="food_info" name="food_info" class="form-horizontal"');?>
+	 				<?php echo validation_errors(); ?>
 	 				<fieldset>
 						<div class="widget row-fluid">
 							<div class="navbar">
@@ -86,28 +93,34 @@
 						    <div class="well">
 								<div class="control-group">
 							            <label class="control-label">Food Name</label>
-							            <div class="controls"><input type="text" name="regular" class="span12" /></div>
+							            <div class="controls"><input type="text" name="food_name" class="span12" id="food_name"/></div>
 							    </div>
 							    <div class="control-group">
 							            <label class="control-label">Food Price</label>
-							            <div class="controls"><input type="text" name="regular" class="span12" /></div>
+							            <div class="controls"><input type="text" name="food_price" class="span12" id="food_price" /></div>
 							    </div>
 							    <div class="control-group">
 		                            <label class="control-label">Food Category</label>
 		                            <div class="controls">
-		                                <select data-placeholder="Choose a Country..." class="select" tabindex="2">
-		                                    <option value="Cambodia">Favourite</option> 
-		                                    <option value="Cameroon">Breakfast</option> 
-		                                    <option value="Canada">Deserts</option> 
-		                                    <option value="Cape Verde">Beverages</option> 
+		                                <select data-placeholder="selct the cateogry" class="select" tabindex="2" id="food_category">
+		                                    <option value="1">Favourite</option> 
+		                                    <option value="2">Breakfast</option> 
+		                                    <option value="3">Deserts</option> 
+		                                    <option value="4">Beverages</option> 
 		                                </select>
 		                            </div>             
 		                        </div>
 		                        <div class="control-group">
 	                                <label class="control-label">Food Image </label>
 	                                <div class="controls">
-	                                    <input type="file" class="styled">
+	                                    <input type="file" class="styled" onchange="readURL(this);" id="food_img" name="food_img">
 	                                </div>
+	                                <div class="controls">
+	                                <div class="thumb_image_holder"><!--image holder div starts-->
+					                    <img id="img_prev" src="#"  style="width:165px; height:122px; background-color: #FBFBFB"/>
+					                    <img src="<?php echo base_url()?>assets/img/delete.png" style="float:left; margin-top:9px; margin-right:9px; cursor:pointer" id="x" class="delete_image del"/>
+						               </div>
+						              </div>
 	                            </div>
 	                            
 	                            <div class="form-actions">
