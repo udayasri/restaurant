@@ -36,7 +36,7 @@
 </style>
 
 
-<script>
+<!-- <script>
 	// -- This function will pop up the edituser dialogbox & pass data to the model using ajax 
 	$("#edit_food").live("click",function()
 	{
@@ -102,24 +102,20 @@
 			  		]
 			});	
 	});
-</script>
+</script> -->
 
 <script>
-	$("#delete_food").live("click",function()
+
+var baseurl =  "<?php echo base_url() ?>";
+
+	$("#delete_food").live( "click", function()
 	{
 		//This will get the values of the user_name & the user_type when user click the edit icon using js.
 		$("#data-table tbody").delegate("tr", "click", function() 
 		{
-			var firstCellText = $(this).closest('tr').find('td:eq(0)').text();
-			var secondCellText = $(this).closest('tr').find('td:eq(1)').text();
-			var thirdCellText = $(this).closest('tr').find('td:eq(2)').text();
-			var fourthCellText = $(this).closest('tr').find('td:eq(3)').text();
-			
-			$("#food_name").val(secondCellText);
-			$("#food_price").val(thirdCellText);
-			$("#food_category option:contains(" + fourthCellText + ")").attr('selected', 'selected'); //set the combo box selected value.
-			 
-		} );
+			var fifthCellText = $(this).closest('tr').find('td:eq(4)').text();
+
+		
 	
 		//pop up the edituser jquery dialog box	
 		$("#deletefood_info").dialog
@@ -134,29 +130,19 @@
 					      text: "Yes " ,
 					      click: function() 
 					      {
-						      var user_name = $("#user_name_edit").val();
-					  		  var account_type = $("#i_account_type_edit").val();
-	
-					  		  if( user_name == '' )
-					  		  {
-						  		  
-					  			$("#insert_user_edit").css("display" , "block");
-						  	   }
-					  		  else
-					  		  {
+						      var food_id = $("#food_id").val();
 		
 						  		  $.ajax({
 							             type:"post",
-							             url: "vfvdfv",
-							             data: "user_name=" + user_name + "&account_type=" + account_type,
-							             success:function(data)
+							             url: baseurl+"foodmenu/deleteFood",
+							             data: "food_id=" + fifthCellText  ,
+							             success:function()
 							             {
 											location.reload();
 							  			 
 							             }
 							         });
 					  		  }
-					      	}
 					    },
 					    {
 					    	text: " No",
@@ -167,6 +153,8 @@
 		  		 		}
 			  		]
 			});	
+			
+		});
 		
 	});
 </script>
@@ -259,11 +247,11 @@
 	                                echo '<td>'; echo $row->food_name; 		echo '</td>';
 	                                echo '<td>'; echo $row->food_price; 			echo '</td>';
 	                                echo '<td>'; echo $row->category_name; 	echo '</td>';
+									echo '<td style = " display:none ">'; echo $row->food_id ; echo '</td>';
 	                                echo '<td>';
-									$data['food_id'] = $row->food_id; 
 	                                        echo '<ul class="table-controls">
 	                                            <li><a href="'.base_url().'foodmenu/editfood/'.$row->food_id.'" class="tip" title="Edit Food" id = "#"><i class="fam-pencil"></i></a> </li>
-	                                            <li><a href="#" class="tip" title="Remove Food" id = "delete_food" ><i class="fam-cross"></i></a> </li>
+	                                            <li><a href="'.base_url().'foodmenu/deleteFood/'.$row->food_id.'"  class="tip" title="Remove Food" id = "#" ><i class="fam-cross"></i></a> </li>
 	                                        </ul>';
 	                                echo  '</td>';
                                 echo '</tr>';
@@ -275,7 +263,7 @@
                         </table>
                     </div>
                 </div>
-                <!-- /default datatable -->
+                <!--  datatable -->
                 
            </div>  
            </div>   
@@ -293,47 +281,47 @@
 	
 	
 	<!-- edit food info up content div -->
-	<div id="editfood_info" >
-		<!-- form statrts  -->
-		<form class="form-horizontal" action="#">
-			<fieldset>
-				<div class="widget row-fluid">
-				    <div class="well">
-						<div class="control-group">
-					            <label class="control-label">Food Name</label>
-					            <div class="controls"><input type="text" id="food_name" name="regular" class="span12" /></div>
-					    </div>
-					    <div class="control-group">
-					            <label class="control-label">Food Price</label>
-					            <div class="controls"><input type="text" name="regular" class="span12" id="food_price" /></div>
-					    </div>
-					    <div class="control-group">
-	                        <label class="control-label">Food Category</label>
-	                        <div class="controls">
-	                            <select data-placeholder="Food Category" class="select" tabindex="2" id="food_category">
-	                                <option value="Favourite">Favourite</option> 
-	                                <option value="Breakfast">Breakfast</option> 
-	                                <option value="Deserts">Deserts</option> 
-	                                <option value="Beverages">Beverages</option> 
-	                            </select>
-	                        </div>             
-	                    </div>
-	                    <div class="control-group">
-	                        <label class="control-label">Food Image </label>
-	                        <div class="controls">
-	                            <input type="file" class="styled">
-	                        </div>
-	                    </div>
-	                    
-	                    <!-- <div class="form-actions">
-	                        <button type="submit" class="btn btn-primary">Save</button>
-	                    </div> -->
-	                    
-	                </div>
-				</div>
-			</fieldset>
-		</form>
-	</div>
+	// <div id="editfood_info" >
+		// <!-- form statrts  -->
+		// <form class="form-horizontal" action="#">
+			// <fieldset>
+				// <div class="widget row-fluid">
+				    // <div class="well">
+						// <div class="control-group">
+					            // <label class="control-label">Food Name</label>
+					            // <div class="controls"><input type="text" id="food_name" name="regular" class="span12" /></div>
+					    // </div>
+					    // <div class="control-group">
+					            // <label class="control-label">Food Price</label>
+					            // <div class="controls"><input type="text" name="regular" class="span12" id="food_price" /></div>
+					    // </div>
+					    // <div class="control-group">
+	                        // <label class="control-label">Food Category</label>
+	                        // <div class="controls">
+	                            // <select data-placeholder="Food Category" class="select" tabindex="2" id="food_category">
+	                                // <option value="Favourite">Favourite</option> 
+	                                // <option value="Breakfast">Breakfast</option> 
+	                                // <option value="Deserts">Deserts</option> 
+	                                // <option value="Beverages">Beverages</option> 
+	                            // </select>
+	                        // </div>             
+	                    // </div>
+	                    // <div class="control-group">
+	                        // <label class="control-label">Food Image </label>
+	                        // <div class="controls">
+	                            // <input type="file" class="styled">
+	                        // </div>
+	                    // </div>
+// 	                    
+	                    // <!-- <div class="form-actions">
+	                        // <button type="submit" class="btn btn-primary">Save</button>
+	                    // </div> -->
+// 	                    
+	                // </div>
+				// </div>
+			// </fieldset>
+		// </form>
+	// </div>
 	
 	<div id="deletefood_info">
 	  <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>Do you want to delete this food item ? </p>

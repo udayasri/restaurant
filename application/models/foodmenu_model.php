@@ -36,6 +36,18 @@ class Foodmenu_model extends CI_Model {
 		
 	}
 	
+	public function deleteFood( $query, $params )
+	{
+		$result = $this->db->query($query,$params);
+			if($result != false){
+				return true;
+			}
+			else{
+				return false;
+			}
+	}
+	
+	
 	
 	
 }

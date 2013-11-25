@@ -51,12 +51,17 @@ class Foodmenu extends CI_Controller
 	
 	public function deleteFood()
 	{
-		$this->load->model('deletedata_model');
-		$id = $this->input->post('id');
-	
-		$query = 'DELETE FROM sales_search_option WHERE sale_id =?';
+		if( $this->uri->segment(3) != null )
+		{
+			$query = 'DELETE FROM foods  WHERE food_id = ?';
 		
-		$this->deletedata_model->deletedata($query,$id);
+			$this->foodmenu_model->deleteFood( $query, $this->uri->segment(3) );
+			redirect('foodmenu');
+		}
+		else
+		{
+			redirect('foodmenu');
+		}
 	}
 	
 }
