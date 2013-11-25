@@ -42,9 +42,9 @@
 	{
 		
 		//This will get the values of the user_name & the user_type when user click the edit icon using js.
-		$("#data-table tbody").delegate("tr", "click", function() 
+		$("#data-table tbody").on( "click", "td", function()
 		{
-			var firstCellText = $(this).closest('tr').find('td:eq(0)').text();
+			//var firstCellText = $(this).closest('tr').find('td:eq(0)').text();
 			var secondCellText = $(this).closest('tr').find('td:eq(1)').text();
 			var thirdCellText = $(this).closest('tr').find('td:eq(2)').text();
 			var fourthCellText = $(this).closest('tr').find('td:eq(3)').text();
@@ -260,8 +260,9 @@
 	                                echo '<td>'; echo $row->food_price; 			echo '</td>';
 	                                echo '<td>'; echo $row->category_name; 	echo '</td>';
 	                                echo '<td>';
+									$data['food_id'] = $row->food_id; 
 	                                        echo '<ul class="table-controls">
-	                                            <li><a href="#" class="tip" title="Edit Food" id = "edit_food"><i class="fam-pencil"></i></a> </li>
+	                                            <li><a href="'.base_url().'foodmenu/editfood/'.$row->food_id.'" class="tip" title="Edit Food" id = "#"><i class="fam-pencil"></i></a> </li>
 	                                            <li><a href="#" class="tip" title="Remove Food" id = "delete_food" ><i class="fam-cross"></i></a> </li>
 	                                        </ul>';
 	                                echo  '</td>';
