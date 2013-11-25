@@ -81,7 +81,7 @@
 		    	
 				<!-- form statrts  -->
 	 			<!-- <form class="form-horizontal" action="#"> -->
-	 				<?php echo form_open_multipart(base_url().'newfood/upload_foodinfo','id="food_info" name="food_info" class="form-horizontal"');?>
+	 				<?php echo form_open_multipart(base_url().'editfood/update_foodinfo','id="food_info" name="food_info" class="form-horizontal"');?>
 	 				<?php echo validation_errors(); ?>
 	 				<fieldset>
 						<div class="widget row-fluid">
@@ -102,7 +102,7 @@
 							    <div class="control-group">
 		                            <label class="control-label">Food Category</label>
 		                            <div class="controls">
-		                                <select data-placeholder="selct the cateogry" class="select" tabindex="2" id="food_category">
+		                                <select data-placeholder="selct the cateogry" class="select" tabindex="2" id="food_category" name="food_category">
 		                                    <option value="1" <?php if ( $foodDetails[0]->food_category == "1" ) echo "selected='selected'";?> >Favourite</option> 
 		                                    <option value="2" <?php if ( $foodDetails[0]->food_category == "2" ) echo "selected='selected'";?> >Breakfast</option> 
 		                                    <option value="3" <?php if ( $foodDetails[0]->food_category == "3" ) echo "selected='selected'";?> >Deserts</option> 
@@ -122,6 +122,8 @@
 						               </div>
 						              </div>
 	                            </div>
+	                            
+	                            <input type="hidden" id="food_id" name="food_id" value="<?php echo $foodDetails[0]->food_id?>">
 	                            
 	                            <div class="form-actions">
                                     <button type="submit" class="btn btn-primary">Submit</button>

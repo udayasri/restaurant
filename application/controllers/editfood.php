@@ -7,30 +7,15 @@ class Editfood extends CI_Controller
         parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->library('upload');
+		$this->load->model('updatefood_model');
     }
-	
-	// This will load newfood_view
-	public function edit()
+
+	public function index()
 	{
-		if( $this->session->userdata('username') != null )
-		{	
-			if( $this->uri->segment(2) != null )
-			{
-				$this->load->view( 'editfood_view.php', $this->uri->segment(3) );
-			}
-			else
-			{
-				redirect('foodmenu');
-			}
-			
-		}
-		else
-		{
-			redirect('login');
-		}
+		
 	}
 	
-	function upload_foodinfo()
+	function update_foodinfo()
 	{
 		$this->form_validation->set_rules('food_name', 'Food Name', 'xss_clean|required');
 		$this->form_validation->set_rules('food_price', 'Food Price', 'xss_clean|required');
@@ -39,13 +24,14 @@ class Editfood extends CI_Controller
 		$food_price = $this->input->post('food_price');
 		$food_category  = $this->input->post('food_category');
 		$food_img = $this->input->post('food_img');
+		$food_id = $this->input->post('food_id');
 		
 		if ($this->form_validation->run() != true)
 		{
 			// $this->session->sess_destroy();
 			// $this->session->set_flashdata('mg', 'Image Title can not be empty');
 		
-			redirect('newfood/index');
+			redirect('foodmenu');
 		}
 		else
 		{
@@ -68,15 +54,11 @@ class Editfood extends CI_Controller
 					$img = $this->upload->data();
 					
 					$foodImageName = $img['file_name'];	
+					$params = array( $food_name,$foodImageName,$food_price,$food_category, $food_id );
 					
-					$this->load->model('newfood_model');
+					$query = 'UPDATE foods SET food_name = ? ,food_image = ? ,food_price = ? ,food_category = ?  WHERE food_id = ? ;';
 					
-					$params = array($food_name,$foodImageName,$food_price,$food_category);
-					
-					$query = 'INSERT INTO foods (food_name,food_image,food_price,food_category) 
-					VALUES(?,?,?,?)';
-					
-					$result = $this->newfood_model->imageUpload($query,$params); 
+					$result = $this->updatefood_model->imageUpload($query,$params); 
 					
 					if($result == true){ redirect('foodmenu/index'); }
 					//echo "upload ok ";
@@ -91,6 +73,17 @@ class Editfood extends CI_Controller
 					// redirect('newfood/index');
 			
 				}
+			}
+			else
+			{
+				$params = array( $food_name,$food_price,$food_category, $food_id );
+					
+				$query = 'UPDATE foods SET food_name = ? ,food_price = ? ,food_category = ? WHERE food_id = ? ;';
+				
+				$result = $this->updatefood_model->imageUpload($query,$params); 
+				
+				redirect('foodmenu');
+				
 			}
 		}
 	}
