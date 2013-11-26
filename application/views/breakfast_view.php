@@ -144,6 +144,42 @@
 
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/swfobject.js"></script>
 <title>Breakfast :: McDonalds</title>
+
+<style>
+button.button 
+{
+	overflow: visible;
+	width: auto;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	background: transparent;
+	cursor: pointer;
+}
+button.color1 > span 
+{
+	background: #c40404;
+}
+
+button.button > span 
+{
+	float: left;
+	height: 27px;
+	padding: 0;
+	font: normal 13px/26px "Lato", Lato, Helvetica, sans-serif;
+	text-align: center;
+	white-space: nowrap;
+	color: #fff;
+	text-transform: uppercase;
+	border-radius: 0px;
+}
+
+button.button span span {
+padding: 0 10px;
+display: block;
+float: left;
+}
+</style>
 </head>  
  
 <body class="page genericpage " style="background:#FFFFFF; background-image: url('images/1336914254629.jpg'); background-repeat: no-repeat; background-position:center top;">
@@ -170,7 +206,7 @@
     
 				<ul>
                     <li id="foodnav_li" class="first">
-                        <a href="breakfast.html" id="foodnav_link" class="nav_item firstLink" style="background-image: url('images/breakfast.png');"></a>
+                        <a href="<?php echo base_url()?>breakfast" id="foodnav_link" class="nav_item firstLink" style="background-image: url('images/breakfast.png');"></a>
 					</li>
             
                     <li id="simplenav_li">
@@ -384,10 +420,14 @@ vertical-align:top;
 						echo '</tr><tr>';
 					}
 			  		echo '<td width="134">';
+					echo '<div style = "height:150px">';
 			  		echo '<img src = "'.base_url().'assets/img/foods/'.$row->food_image.'">';
 					echo '<p style="text-align:center"><span class="rtStyle_image_title">';
 					echo $row->food_name; 	
-					echo '</span></p>';
+					echo '</span>';
+					echo '</p>';
+					echo '</div>';
+					echo '<button type="button" title="Add to Cart" class="button btn-cart color1" onclick="setLocation("http://pizzahut.lk/index.php/magic-pan-special-deal.html?options=cart")"><span><span>Add to Cart</span></span></button>';
 					echo '</td>';
 					
 					$i++;
@@ -549,12 +589,12 @@ vertical-align:top;
         <td align="left" valign="middle" class="bigger_and_bolder">
  
                 <div style="float:left;">
-            <a href="http://twitter.com/#!/mcd_canada" onclick="javascript:;" title="">
+            <a href="#" onclick="javascript:;" title="">
                     <img align="absmiddle" src="images/twitter.png" alt=""/><span style="margin-left:3px;">Follow</span>
               </a> 
            </div>     
                       <div style="float:left; margin-left:8px;">
-            <a class="external" href="http://www.facebook.com/McDonaldsCanada" onclick="javascript:;" title="">
+            <a class="external" href="#" onclick="javascript:;" title="">
                     <img align="absmiddle" src="images/facebook.png" alt=""/><span style="margin-left:3px;">Like</span>
               </a> 
            </div>     

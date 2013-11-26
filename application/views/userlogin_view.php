@@ -53,7 +53,7 @@
 
  
   
-<body class="page genericpage " style="background:#000000; background-image: url('images/1376284738982.jpg'); background-repeat: no-repeat; background-position:center top;">
+<body class="page genericpage " style="background:#000000; background-image: url('images/bg.jpg'); background-repeat: no-repeat; background-position:center top;">
     <div id="document_wrapper">
         
         <a name="top"></a>
@@ -262,7 +262,7 @@ function siteToggler(lang,link,redirectSearchResultToSearch)
 	    <div id="breadcrumb">
 	        <div class="mcdonaldsbreadcrumb breadcrumb">
 	          
-	         <a href='<?php echo base_url()?>userlogin' class='last'>Login</a>           
+	         <a href='<?php echo base_url()?>userlogin' class='last'>Login</a>             
 	       
 	       </div>
 	    </div>
@@ -385,10 +385,26 @@ padding:0px;
 
 </style>
 
-    <div style="color:#ffffff;background:#000000; margin-top:0px; padding:42px; -moz-border-radius: 0px 0px 10px 10px; -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px;">
-        <table>
+    <div style="color:#000;background:#ffffff; margin-top:0px; padding:42px; -moz-border-radius: 0px 0px 10px 10px; -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px; height: 100px">
+        
+    	<?php echo form_open('login/login_validate');?>
+    	
+    	<div style="float: left; width: 100%; margin-bottom: 20px;">
+	    	<label style="margin-right: 50px">User Name  </label>
+	    	<input type="text" id="username" name="username" />
+        </div>
+        <div style="float: left; width: 100%; margin-bottom: 20px; ">
+	        <label style="margin-right: 60px">Password</label>
+	        <input type="password" id="password" name="password" />
+        </div>
+        
+        <div style="float:left; width: 100%">
+        	<button type="submit" style="margin-right: 36px; width: 80px">Login</button>
+        	<a href="<?php echo base_url()?>userregister"><button type="button" id="register" style="width: 80px" >Register</button></a>
+        </div>
+        <!-- <table>
             <tr valign="top">
-				<td width="290" valign="top">
+                <td width="290" valign="top">
 				<h1>Menu</h1>
 				<p><a href="/ca/en/menu/full_menu/mccafe.html">McCafe<sup></sup></a><img src="images/small_carrot.png" align="absmiddle"><br>
 				<span style="color:#838383">Discover the rich, bold flavour.</span>
@@ -425,9 +441,9 @@ padding:0px;
 				<h1>Meal Bundles</h1>
 				<p><a href="/ca/en/menu/meal_bundles/extra_value_meals.html">Extra Value Meals</a><img src="images/small_carrot.png" align="absmiddle"><br><span style="color:#838383">Treat yourself to tasty deals.</span></p>
 				<p><a href="/ca/en/menu/meal_bundles/happy_meal.html">Happy Meal</a><img src="images/small_carrot.png" align="absmiddle"><br><span style="color:#838383"> You want the very best for your kids, and so do we!</span></p>              
-                </td>                
+				                </td>                
             </tr>
-        </table>
+        </table> -->
     </div>
 
       </div>
