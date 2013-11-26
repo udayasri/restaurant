@@ -65,39 +65,22 @@
     <div id="top_content">
         <div id="logo">
             <div class="logo mlogo parbase">
-
-
- 
-  
-
-    <a href="/ca/en.html">
-<img src="images/1336914409746.png" width="113" height="98" alt="I'm lovin it."/>
-  
- </a>   
-  
-
-
+		    <a href="<?php echo base_url()?>home">
+		<img src="images/1336914409746.png" width="113" height="98" alt="I'm lovin it."/>
+		  
+		 </a>   
 </div>
-
         </div>
         <div id="main_navigation">
             <div class="mcdonaldsleftnav parbase">
  
-    
- 
-  
-    
- 
-   
-   
-    
      
         <!-- Start of Left Navigation div -->
         <div id="leftnavigation">
     
 				<ul>
                     <li id="foodnav_li" class="first">
-                        <a href="breakfast.html" id="foodnav_link" class="nav_item firstLink" style="background-image: url('images/breakfast.png');"></a>
+                        <a href="<?php echo base_url()?>breakfast" id="foodnav_link" class="nav_item firstLink" style="background-image: url('images/breakfast.png');"></a>
 					</li>
             
                     <li id="simplenav_li">
@@ -215,26 +198,10 @@ function _utf8_encode(string) {
         
             <div id="breadcrumb">
                 <div class="mcdonaldsbreadcrumb breadcrumb">
-
- 
-  
-
- 
-   
-   
-         
- 
-        <div class="breadCrumb"> 
-                    
-                <a href='#' class='last'>Menu</a>
-                       
-        </div>      
-              
- 
-   
-  
-         </div>
-
+		        <div class="breadCrumb">     
+		         <a href='#' class='last'>Menu</a>           
+		        </div>      
+		       </div>
             </div>
         
         <div id="notification">

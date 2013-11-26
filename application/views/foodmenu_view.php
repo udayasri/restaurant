@@ -104,7 +104,7 @@
 	});
 </script> -->
 
-<script>
+<!-- <script>
 
 var baseurl =  "<?php echo base_url() ?>";
 
@@ -157,7 +157,7 @@ var baseurl =  "<?php echo base_url() ?>";
 		});
 		
 	});
-</script>
+</script> -->
 
 
 </head>
@@ -223,11 +223,11 @@ var baseurl =  "<?php echo base_url() ?>";
 		
 	<div id="content">
 		<div class="wrapper">
-		    <h5> </h5> 
-		    <br />                  
+		    <h5> </h5>
+		    <br />           
                 <!-- Default datatable -->
                 <div class="widget">
-                	<div class="navbar"><div class="navbar-inner"><h6>Food Menu Items</h6></div></div>
+                	<div class="navbar"><div class="navbar-inner"><h6>Orders Information</h6></div></div>
                     <div class="table-overflow">
                         <table class="table table-striped table-bordered" id="data-table">
                             <thead>
@@ -248,7 +248,6 @@ var baseurl =  "<?php echo base_url() ?>";
 	                                echo '<td>'; echo $row->food_name; 		echo '</td>';
 	                                echo '<td>'; echo $row->food_price; 			echo '</td>';
 	                                echo '<td>'; echo $row->category_name; 	echo '</td>';
-									echo '<td style = " display:none ">'; echo $row->food_id ; echo '</td>';
 	                                echo '<td>';
 	                                        echo '<ul class="table-controls">
 	                                            <li><a href="'.base_url().'foodmenu/editfood/'.$row->food_id.'" class="tip" title="Edit Food" id = "#"><i class="fam-pencil"></i></a> </li>
