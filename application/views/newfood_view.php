@@ -65,6 +65,7 @@
 			            <li ><a href="<?php echo base_url()?>foodmenu" title=""><i class="icon-list"></i>Food Menu</a></li>
 			            <li class="active" ><a href="<?php echo base_url();?>newfood" title=""><i class="icon-plus-sign"></i>Add New Food</a></li>
 			            <li><a href="<?php echo base_url();?>orders" title=""><i class="icon-asterisk"></i>Orders<strong>3</strong></a></li>
+			        	<li><a href="<?php echo base_url();?>orders" title=""><i class="ico-file"></i>Reports</a></li>
 			        </ul>
 			        <!-- /main navigation -->
 
