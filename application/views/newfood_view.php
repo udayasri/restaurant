@@ -103,7 +103,7 @@
 							    <div class="control-group">
 		                            <label class="control-label">Food Category</label>
 		                            <div class="controls">
-		                                <select data-placeholder="selct the cateogry" class="select" tabindex="2" id="food_category">
+		                                <select data-placeholder="selct the cateogry" class="select" tabindex="2" id="food_category" name="food_category">
 		                                    <option value="1">Favourite</option> 
 		                                    <option value="2">Breakfast</option> 
 		                                    <option value="3">Deserts</option> 

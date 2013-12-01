@@ -414,8 +414,8 @@ vertical-align:top;
 }
 </style>
     <div class="products" style="background:#fffdea; margin-top:0px; padding:45px; -moz-border-radius: 0px 0px 10px 10px; -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px;">
-	<h1>Favourite</h1>
-	<p style="width:400px;">Whether you need a little pick-me-up to get you through the afternoon or a companion for your favourite sandwich, we’ve got you covered.</p>
+	<h1>Beverages</h1>
+	<p style="width:400px;">Refresh your taste buds with just the right drink. From ice-cold Diet Coke and orange juice* to freshly brewed Premium Roast Coffee, we’ve got the ideal choice for your favourite menu items</p>
 	<table>
 		<!-- row 1 -->
 		<tr>
