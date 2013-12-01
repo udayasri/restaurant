@@ -88,7 +88,7 @@
 					</li>
             
                     <li id="promonav_li">
-                        <a href="#" id="promonav_link" class="nav_item" style="background-image: url('images/beverages.png');"></a>
+                        <a href="<?php echo base_url()?>beverages" id="promonav_link" class="nav_item" style="background-image: url('images/beverages.png');"></a>
 					</li>
             
                     <li id="noflyout_last_li">

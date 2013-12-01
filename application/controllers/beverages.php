@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Desserts extends CI_Controller 
+class Beverages extends CI_Controller 
 {
 	private $view_data = array();
 		
@@ -13,8 +13,8 @@ class Desserts extends CI_Controller
 	// This will food menu table page
 	public function index()
 	{
-			$this->view_data['foodDetails'] = $this->foodmenu_model->getFoodDetailsForCart( 3 ); // 3 -> category id of desserts
+			$this->view_data['foodDetails'] = $this->foodmenu_model->getFoodDetailsForCart( 4 ); // 4 -> category id of beverages
 			
-			$this->load->view( 'desserts_view.php' , $this->view_data );	
+			$this->load->view( 'beverages_view.php' , $this->view_data );	
 	}
 }

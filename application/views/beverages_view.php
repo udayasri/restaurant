@@ -1,14 +1,113 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head> 
+<head>              
+<script type="text/javascript">
+  
+    function desktopRedirect(){
+        var redirectPath = "";  
+        var useragent = navigator.userAgent;
+        var domain = "www.mcdonalds.ca";
+  
+        if ( useragent.indexOf('BlackBerry') != -1 || useragent.indexOf('iPhone OS 4') != -1 || useragent.indexOf('iPhone OS 5') != -1 || useragent.indexOf('iPhone OS 6') != -1 || useragent.indexOf('Android 2') != -1 || useragent.indexOf('Android 4') != -1 || useragent.indexOf('Opera') != -1 || useragent.indexOf('Windows Phone') != -1 ) {    
+          var alertURL = "";            
+          var getAlertPage = "false";
+          var fullSite = "no";
+          if(getCookie("fullsite") != null){
+            fullSite = getCookie("fullsite");
+          }
+   
+      if(fullSite == "yes"){
+                //cookie set for full site
+                var pagePath = '/ca/en/menu/full_menu/breakfast';
+                alertURL = "http://"+domain+pagePath+".html";
+      }else{
+            if(redirectPath != ""){
+                    //redirecting to path specified in page properties
+            var pagePath = '/ca/en/menu/full_menu/breakfast';
+            var url= "http://"+domain+pagePath+".html";
+                    var redPath = "";
+                    
+                    if((redirectPath.indexOf("/content/")>-1)){
+                        redPath = "http://"+domain+redirectPath+".html";
+                    }else{
+                        redPath = redirectPath;
+                    }  
+            alertURL = redPath;
+         }else{                
+            //check if intermediate page is required or not               
+            if(getAlertPage == "true"){
+                var pagePath = '/ca/en/menu/full_menu/breakfast';
+                var url= "http://"+domain+pagePath+".html";
+                                          
+                        if(("".indexOf("/content/")>-1)){
+                             alertURL = "http://"+domain+".html?desktopurl="+url;
+                        }else{
+                             alertURL = "?desktopurl="+url;
+                        }
+                    }else{
+                        //do nothing
+                    }
+                }      
+            }          
+            
+            var mobileAlert = "no"
+            if(getCookie("mobilealert") != null){
+                mobileAlert = getCookie("mobilealert");
+            }
+            var desktopVal = "no";
+            var fullSiteRedirect = ""; 
+            if(getCookie("fullsiteredirect") != null){
+                fullSiteRedirect = getCookie("fullsiteredirect");
+            } 
+            
+            if(fullSiteRedirect == "yes" && mobileAlert == "no" && desktopVal == "no"){
+                setCookie("fullsiteredirect","no");
+                window.location.href = alertURL;
+            }
+            
+            if(mobileAlert == "no" && desktopVal == "no"){
+                if(fullSiteRedirect == "yes" || fullSiteRedirect == "no"){
+                    //do nothing
+                }
+                else{
+                    if(alertURL != ""){
+                        window.location.href = alertURL;
+                    }
+                }    
+            } 
+                                      
+        }
+        else{
+            // For desktop do nothing 
+        }
+    }         
+    function getCookie(name){ 
+        var re = new RegExp(name + "=([^;]+)"); 
+        var value = re.exec(document.cookie); 
+        return (value != null) ? unescape(value[1]) : null; 
+    }  
+    function setCookie(cookieName,cookieValue) {
+        var today = new Date();
+        var expire = new Date();
+        expire.setTime(today.getTime() + 15 * 60 * 1000);
+        document.cookie = cookieName+"="+escape(cookieValue)+ ";expires="+expire.toGMTString();
+    }
+    
+   var allowIntRed= "true";
+   if("yes" == "yes"){  
+   if(allowIntRed == "true"){
+       desktopRedirect();  
+       } 
+   }    
+</script> 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"> 
-<meta name="title" content="Menu :: McDonalds.ca" />
-<meta name="description" content="Menu :: McDonalds.ca" />
-<meta name="keywords" content="" />
+<meta name="title" content="Breakfast :: McDonalds.ca" />
+<meta name="description" content="Enjoy your wakeup call with our freshly-cracked eggs, premium roast coffee, baked fresh daily buttermilk biscuits, savoury sausage and so much more." />
+<meta name="keywords" content="morning, rush hour, coffee, egg, bacon, mcgriddle, hurry, quick, hash brown, mcmuffin, fresh, biscuit, blt, bagel, breakfast, hotcakes, pancakes, sausage, buttermilk, hash browns, orange juice" />
 <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
 <META name="_market" content="" />
 <META name="_language" content="" />
-<META name="_breadcrumb" content="/ca/en/menu" />
+<META name="_breadcrumb" content="/ca/en/menu/full menu/breakfast" />
 
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url();?>assets/css/mcdonalds.css"/>
 <link rel="stylesheet" type="text/css" media="print" href="<?php echo base_url();?>assets/css/print.css"/>
@@ -44,37 +143,64 @@
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/DD_roundies_0.0.2a-min.js"></script>   
 
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/swfobject.js"></script>
+<title>Beverages :: McDonalds</title>
 
-<title>Menu :: McDonalds</title>
+<style>
+button.button 
+{
+	overflow: visible;
+	width: auto;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	background: transparent;
+	cursor: pointer;
+}
+button.color1 > span 
+{
+	background: #c40404;
+}
 
-     
+button.button > span 
+{
+	float: left;
+	height: 27px;
+	padding: 0;
+	font: normal 13px/26px "Lato", Lato, Helvetica, sans-serif;
+	text-align: center;
+	white-space: nowrap;
+	color: #fff;
+	text-transform: uppercase;
+	border-radius: 0px;
+}
 
+button.button span span {
+padding: 0 10px;
+display: block;
+float: left;
+}
+</style>
 </head>  
-
  
-  
-<body class="page genericpage " style="background:#000000; background-image: url('images/1376284738982.jpg'); background-repeat: no-repeat; background-position:center top;">
+<body class="page genericpage " style="background:#FFFFFF; background-image: url('images/1336914298734.jpg'); background-repeat: no-repeat; background-position:center top;">
     <div id="document_wrapper">
         
         <a name="top"></a>
-        
-        
- 
-     
+   
 <div id="top_wrapper"> 
     <div id="top_content">
         <div id="logo">
             <div class="logo mlogo parbase">
-		    <a href="<?php echo base_url()?>home">
-		<img src="images/1336914409746.png" width="113" height="98" alt="I'm lovin it."/>
-		  
-		 </a>   
+    <a href="<?php echo base_url()?>home">
+<img src="images/1336914409746.png" width="113" height="98" alt=""/>
+  
+ </a>   
 </div>
+
         </div>
         <div id="main_navigation">
             <div class="mcdonaldsleftnav parbase">
- 
-     
+
         <!-- Start of Left Navigation div -->
         <div id="leftnavigation">
     
@@ -198,10 +324,11 @@ function _utf8_encode(string) {
         
             <div id="breadcrumb">
                 <div class="mcdonaldsbreadcrumb breadcrumb">
-		        <div class="breadCrumb">     
-		         <a href='#' class='last'>Menu</a>           
-		        </div>      
+		        	<div class="breadCrumb"> 
+						<a href='<?php echo base_url()?>home'>Menu</a>&nbsp;<span class='bd_separator'>/</span>&nbsp;<a href='<?php echo base_url()?>beverages' class='last'>Beverages</a>      
+		        	</div>      
 		       </div>
+
             </div>
         
         <div id="notification">
@@ -209,83 +336,39 @@ function _utf8_encode(string) {
          
             <div id="search">
                <div class="parbase search"> 
- 
-
- 
-  
-   <!--<form name="searchfrm" action="javascript:submitSearch();">
-     Search&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="search" /> 
-   </form> -->
-     <script language="javaScript"> 
-     function submitSearch() {
-         var collection ="canada" ;
-         var searchVal = document.searchfrm.search.value;
-         if (searchVal.trim()==""){ 
-             alert('Please enter a query to search.');
-         }
-         else{
-             var formActionn = "/content/ca/en/search/search_results.html?queryText=" + searchVal.trim() + "&collection="+collection;
-             window.open(formActionn,"_self");  
-         }
-     }
-     </script></div>
-
-           </div>
-        
-        
-            <div id="language">
-                <div class="siteToggler">
- 
-  
-
-<script>
-
-/*function siteToggler(lang,link)
-{    
-    setCookie( 'language', lang, 365, '/', '', '' );
-    window.location = link;
-}*/
-
-function siteToggler(lang,link,redirectSearchResultToSearch)
-{   
-    if((redirectSearchResultToSearch.indexOf('true')!=-1)&&(link.indexOf('/search_results.html')!=-1)){
-        link=link.replace('/search_results.html','.html');
-    } 
-    setCookie( 'mcd_language', lang, 365, '/', '', '' );
-    window.location = link;
-}
-
-
-</script>  
-</div> 
-
-	    <div id="breadcrumb">
+		     <script language="javaScript"> 
+		     function submitSearch() {
+		         var collection ="canada" ;
+		         var searchVal = document.searchfrm.search.value;
+		         if (searchVal.trim()==""){ 
+		             alert('Please enter a query to search.');
+		         }
+		         else{
+		             var formActionn = "/content/ca/en/search/search_results.html?queryText=" + searchVal.trim() + "&collection="+collection;
+		             window.open(formActionn,"_self");  
+		         }
+		     }
+		     </script></div>
+		     
+		     <div id="breadcrumb">
 	        <div class="mcdonaldsbreadcrumb breadcrumb">
 	          
 	         <a href='<?php echo base_url()?>userlogin' class='last'>Login</a>           
 	       
 	       </div>
 	    </div>
-</div>
-
-              
+		
+	</div>
+      
+   		</div>
+   
         </div>
         
     </div>
-</div>  
-     
- 
-  
     <div id="page_wrapper">
         <div id="page_content">
-    
-    
         <div id="page_narrow_hero" style="padding-top: 40px; #padding-top: 34px;padding-bottom: 0px; max-width:886px;overflow:hidden; margin-bottom:-2px; #margin-bottom:0px; _margin-bottom:0px;">
             <div class="parsys herosectionpar"><div class="uploadHtml section">
-
-
- 
-  
       <div id="import_html">
             <!-- Start Vizu Ad Catalyst control tag for control / Food Quality EN campaign running on mcdonalds -->
 <script src="http://puma.vizu.com/cdn/00/00/45/57/control_flyover.js?siteid=mcdonalds;ord=[RANDOM]" type="text/javascript"></script>
@@ -293,25 +376,16 @@ function siteToggler(lang,link,redirectSearchResultToSearch)
       </div>
 </div>
 <div class="everything section">
- 
-  
-
-  
-
-
-
-    <div id="everythingcontainer" style="padding:130px 0px 9px 16px;margin:0px 0px 0px 0px" >
+    <div id="everythingcontainer" style="padding:140px 0px 0px 25px;margin:0px 0px 10px 0px" >
             <div class="everythingmain" id="everythingmain" style="overflow:hidden;background-color:#; border:px solid #">
         
             <table class="everythingtable" cellspacing="0" cellpadding="0"> 
               <tr>
-              
-            
                     <tr>
                 
                     <td align="left" valign="top" style="text-align:left; ">
                     <div  style="width:100%; " align="left">
-                    <div id="image everything" class="image " style="width:576.0px">
+                    <div id="image everything" class="image " style="width:590.0px">
                     
                 
                 <script type="text/javascript">
@@ -319,10 +393,8 @@ function siteToggler(lang,link,redirectSearchResultToSearch)
                     $('[title]').removeAttr('title');
                 });
                 </script>               
-                <img title="tagline_menu" style="padding:0px 0px 0px 0px " alt="" width="576.0" class="cq-dd-image" src="images/tagline_menu.png"></a><br/>
+                <img title="Love every morning." style="padding:0px 0px 0px 0px " alt="Love every morning." width="590.0" class="cq-dd-image" src="images/tagline_beverages.png"></a><br>
                     </div>
-                    
-                
                     </div></td>
                 
             
@@ -334,102 +406,116 @@ function siteToggler(lang,link,redirectSearchResultToSearch)
 
                   </div>
 <div class="uploadHtml section">
-
-
- 
-  
       <div id="import_html">
-            
-<style>
-
-div table tr td {
-line-height:25px;
-color:#ffffff;
+            <style>
+div.products table tr td {
+text-align: center;
+vertical-align:top;
 }
-
-div tr, div tr td{
-margin:0px;
-padding:0px;
-}
-
-div table tr td a {
-color:white;
-text-decoration:none;
-}
-
-div table tr td h1 {
-color:#ffffd9;
-margin-bottom:10px;
-}
-
-div table tr td img {
-margin:-2px 0 0 3px;
-}
-
-div p{
-margin:5px auto;
-padding:0px auto;
-}
-
-div p span{
-font-size:11px;
-}
-
-/*override*/
-#content_section{
-height:0px;
-margin:0px;
-padding:0px;
-}
-
-
 </style>
-
-    <div style="color:#ffffff;background:#000000; margin-top:0px; padding:42px; -moz-border-radius: 0px 0px 10px 10px; -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px;">
-        <table>
-            <tr valign="top">
-				<td width="290" valign="top">
-				<h1>Menu</h1>
-				<p><a href="/ca/en/menu/full_menu/mccafe.html">McCafe<sup></sup></a><img src="images/small_carrot.png" align="absmiddle"><br>
-				<span style="color:#838383">Discover the rich, bold flavour.</span>
-				</p>
-				<p><a href="/ca/en/menu/full_menu/value_picks.html">Value Picks<sup></sup></a><img src="images/small_carrot.png" align="absmiddle"><br>
-				<span style="color:#838383">Turn your change into something tasty.</span>
-				</p>
-				<p><a href="/ca/en/menu/full_menu/sandwiches.html">Burgers, Sandwiches, & Wraps</a><img src="images/small_carrot.png" align="absmiddle"><br>
-				<span style="color:#838383">You know you want one.</span>
-				</p>
-				<p><a href="/ca/en/menu/full_menu/chicken.html">Chicken</a><img src="images/small_carrot.png" align="absmiddle"><br>
-				<span style="color:#838383">Juicy, tender and irresistible.</span>
-				</p>
-				<p><a href="/ca/en/menu/full_menu/breakfast.html">Breakfast</a><img src="images/small_carrot.png" align="absmiddle"><br>
-				<span style="color:#838383">Love every morning.</span>
-				</p>
-				</td>
-				                <td width="290" valign="top">
-				<h1>&nbsp;</h1>
-				<p><a href="/ca/en/menu/full_menu/salads.html">Salads</a><img src="images/small_carrot.png" align="absmiddle"><br>
-				<span style="color:#838383">Fresh, yummy freedom in a bowl.</span>
-				</p>
-				<p><a href="/ca/en/menu/full_menu/snacks.html">Snacks & Sides</a><img src="images/small_carrot.png" align="absmiddle"><br>
-				<span style="color:#838383">Delight your taste buds, any time.</span>
-				</p>
-				<p><a href="/ca/en/menu/full_menu/beverages.html">Beverages</a><img src="images/small_carrot.png" align="absmiddle"><br>
-				<span style="color:#838383">Refreshing companions.</span>
-				</p>
-				<p><a href="/ca/en/menu/full_menu/desserts_shakes.html">Desserts & Shakes</a><img src="images/small_carrot.png" align="absmiddle"><br>
-				<span style="color:#838383">Celebrate the sweet life.</span>
-				</p>
-				                </td>
-				                <td width="200" valign="top">
-				<h1>Meal Bundles</h1>
-				<p><a href="/ca/en/menu/meal_bundles/extra_value_meals.html">Extra Value Meals</a><img src="images/small_carrot.png" align="absmiddle"><br><span style="color:#838383">Treat yourself to tasty deals.</span></p>
-				<p><a href="/ca/en/menu/meal_bundles/happy_meal.html">Happy Meal</a><img src="images/small_carrot.png" align="absmiddle"><br><span style="color:#838383"> You want the very best for your kids, and so do we!</span></p>              
-                </td>                
-            </tr>
-        </table>
-    </div>
-
+    <div class="products" style="background:#fffdea; margin-top:0px; padding:45px; -moz-border-radius: 0px 0px 10px 10px; -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px;">
+	<h1>Beverages</h1>
+	<p style="width:400px;">Refresh your taste buds with just the right drink. From ice-cold Diet Coke and orange juice* to freshly brewed Premium Roast Coffee, we’ve got the ideal choice for your favourite menu items</p>
+	<table>
+		<!-- row 1 -->
+		<tr>
+			<?php 
+				$i = 0; 
+	            foreach ($foodDetails as $row) 
+			  	{
+			  		if( $i%5 == 0 )
+					{
+						echo '</tr><tr>';
+					}
+			  		echo '<td width="134">';
+					echo '<div style = "height:150px">';
+			  		echo '<img src = "'.base_url().'assets/img/foods/'.$row->food_image.'">';
+					echo '<p style="text-align:center"><span class="rtStyle_image_title">';
+					echo $row->food_name; 	
+					echo '</span>';
+					echo '</p>';
+					echo '</div>';
+					echo '<button type="button" title="Add to Cart" class="button btn-cart color1" onclick="setLocation('.base_url().'shoppingcart )"><span><span>Add to Cart</span></span></button>';
+					echo '</td>';
+					
+					$i++;
+			  	}
+			?>
+						  		
+			<!-- <td width="134"><img src="images/thumb_egg-mcmuffin.png" border="0"/>
+				<p style="text-align:center"><span class="rtStyle_image_title">Egg McMuffin</span></p>
+			</td>
+			<td width="134"><a href="/ca/en/menu/full_menu/breakfast/sausage_mcmuffin_with_egg.html"><img src="images/breakfast/thumb_sausage-mcmuffin-egg.png" border="0"/></a>
+				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/sausage_mcmuffin_with_egg.html">Sausage McMuffin<sup>®</sup> with Egg</a></span></p>
+			</td>
+			<td width="134"><a href="/ca/en/menu/full_menu/breakfast/bacon_n_egg_mcmuffin.html"><img src="images/thumb_bacon-egg-mcmuffin.png" border="0"/></a>
+				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/bacon_n_egg_mcmuffin.html">Bacon 'n Egg McMuffin<sup>®</sup></a></span></p>
+			</td>
+			<td width="134"><a href="/ca/en/menu/full_menu/breakfast/sausage_mcmuffin.html"><img src="images/thumb_sausage-mcmuffin.png" border="0"/></a>
+				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/sausage_mcmuffin.html">Sausage McMuffin<sup>®</sup></a></span></p>
+			</td>
+<td width="134"><a href="/ca/en/menu/full_menu/breakfast/bacon_egg_cheese_mcgriddles.html"><img src="images/thumb_bacon-egg-cheese-mc-griddles.png" border="0"/></a>
+				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/bacon_egg_cheese_mcgriddles.html">Bacon Egg & Cheese McGriddles<sup>®</sup></a></span></p>
+			</td>
+                        <td width="134"><a href="/ca/en/menu/full_menu/breakfast/bec_bagel.html"><img src="images/thumb_bacon-egg-bagel-multi.png" border="0"/></a>
+				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/bec_bagel.html">Bacon 'N Egg Bagel</a></span></p>
+			</td> -->
+		</tr>
+		
+		<!-- row 2 -->
+		<!-- <tr>
+			
+<td width="134"><a href="/ca/en/menu/full_menu/breakfast/bagel_blt.html"><img src="images/thumb_blt-bagel-multi.png" border="0"/></a>
+				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/bagel_blt.html">BLT Bagel</a></span></p>
+			</td>
+<td width="134"><a href="/ca/en/menu/full_menu/breakfast/egg_lt_bagel.html"><img src="images/thumb_lt-egg-bagel-multi.png" border="0"/></a>
+				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/egg_lt_bagel.html">Egg LT Bagel</a></span></p>
+			</td>
+<td width="134"><a href="/ca/en/menu/full_menu/breakfast/breakfast_burritos.html"><img src="images/thumb_breakfast-burritos.png" border="0"/></a>
+				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/breakfast_burritos.html">Breakfast Burrito</a></span></p>
+			</td>
+<td width="134"><a href="/ca/en/menu/full_menu/breakfast/hash_browns.html"><img src="images/thumb_hash-browns.png" border="0"/></a>
+				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/hash_browns.html">Hash Browns</a></span></p>
+			</td>
+			<td width="134" style="padding-top:4px"><a href="/ca/en/menu/full_menu/snacks/baked_muffins.html"><img src="images/thumb_baked-muffins.png" border="0"/></a>
+				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/snacks/baked_muffins.html">Baked Muffins </a></span></p>
+			</td>
+<td width="134"><a href="/ca/en/menu/full_menu/breakfast/big_breakfast.html"><img src="images/thumb_big-breakfast.png" border="0"/></a>
+				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/big_breakfast.html">Big Breakfast<sup>®*</sup></a></span></p>
+			</td>
+			
+		</tr> -->
+		<!-- row 3 -->
+		<!-- <tr>
+                
+			
+			
+			
+			<td width="134"><a href="/ca/en/menu/full_menu/breakfast/hotcakes_and_sausage.html"><img src="images/thumb_hotcakes-sausage.png" border="0"/></a>
+				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/hotcakes_and_sausage.html">Hotcakes and Sausage</a></span></p>
+			</td>
+<td width="134"><a href="/ca/en/menu/full_menu/breakfast/oatmeal.html"><img src="images/thumb_oatmeal.png" border="0"/></a>
+				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/oatmeal.html">Oatmeal</a></span></p>
+			</td>
+<td width="134">
+                   <a href="/ca/en/menu/full_menu/snacks/fruit_n_yogurt_parfait.html"><img src="images/thumb_parfait.png"/></a>
+                    <p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/snacks/fruit_n_yogurt_parfait.html">Fruit N Yogurt Parfait</a></span></p>
+                </td>
+               </tr> -->
+               <!-- row 4 -->
+		<tr>
+                       
+			<td width="134">
+			</td>
+			<td width="134">
+			</td>
+			<td width="134">
+			</td>
+		</tr>
+	</table>
+	<sup style="color:#929292">At participating McDonald's restaurants. Product availability varies by restaurant.</sup><br/>
+<sup style="color:#929292">*Not available in Quebec. to see the Traditional Breakfast, available at participating McDonald’s restaurants in Quebec</sup>
+</div>
       </div>
 </div>
 </div>
@@ -437,13 +523,13 @@ padding:0px;
         </div>
         
         
-        <div id="content_section" style="  ">
+        <div id="content_section" style="  padding-bottom: 45px;">
         
                 
  
   
     <div id="main_content_segment" class="clear">
-        <div class="main_content_inner_ko" style="">
+        <div class="main_content_inner_ko" style="padding-top: 0px;">
             <div class="parsys genericpagecontent"></div>
 
         </div>
@@ -475,7 +561,7 @@ padding:0px;
 <style>
     #page_footer, #page_footer a 
     {
-        color: #FFFFFF;
+        color: #686868;
     }
 </style>
 
@@ -503,7 +589,7 @@ padding:0px;
     }    
 </script>
 
-<div id="page_footer_rule" style="border-color: #FFFFFF;"></div>
+<div id="page_footer_rule" style="border-color: #929292;"></div>
 
 <!-- <table border="0" cellpadding="0" cellspacing="0">
     <tr>
@@ -512,12 +598,12 @@ padding:0px;
  
                 <div style="float:left;">
             <a href="#" onclick="javascript:;" title="">
-                    <img align="absmiddle" src="/content/dam/Canada/en/global/twitter.png" alt=""/><span style="margin-left:3px;">Follow</span>
+                    <img align="absmiddle" src="images/twitter.png" alt=""/><span style="margin-left:3px;">Follow</span>
               </a> 
            </div>     
                       <div style="float:left; margin-left:8px;">
             <a class="external" href="#" onclick="javascript:;" title="">
-                    <img align="absmiddle" src="/content/dam/Canada/en/global/facebook.png" alt=""/><span style="margin-left:3px;">Like</span>
+                    <img align="absmiddle" src="images/facebook.png" alt=""/><span style="margin-left:3px;">Like</span>
               </a> 
            </div>     
 
@@ -525,7 +611,7 @@ padding:0px;
         
                 </td>
             
-        <td align="right" valign="right" class="not_bigger_but_bolder" >
+     <td align="right" valign="right" class="not_bigger_but_bolder" >
 
       <a href="/ca/en/our_story/corporate_info.html">Corporate Info</a>
       
@@ -610,6 +696,9 @@ padding:0px;
         });
 </script>  
    
+ 
+      
+      
            
 </body>
 

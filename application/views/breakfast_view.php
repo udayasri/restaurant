@@ -214,7 +214,7 @@ float: left;
 					</li>
             
                     <li id="promonav_li">
-                        <a href="#" id="promonav_link" class="nav_item" style="background-image: url('images/beverages.png');"></a>
+                        <a href="<?php echo base_url()?>beverages" id="promonav_link" class="nav_item" style="background-image: url('images/beverages.png');"></a>
 					</li>
             
                     <li id="noflyout_last_li">
@@ -349,6 +349,14 @@ function _utf8_encode(string) {
 		         }
 		     }
 		     </script></div>
+		     
+		     <div id="breadcrumb">
+	        <div class="mcdonaldsbreadcrumb breadcrumb">
+	          
+	         <a href='<?php echo base_url()?>userlogin' class='last'>Login</a>           
+	       
+	       </div>
+	    </div>
 		
 		           </div>
       
