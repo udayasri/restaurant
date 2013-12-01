@@ -583,7 +583,7 @@ vertical-align:top;
 
 <div id="page_footer_rule" style="border-color: #929292;"></div>
 
-<table border="0" cellpadding="0" cellspacing="0">
+<!-- <table border="0" cellpadding="0" cellspacing="0">
     <tr>
     
         <td align="left" valign="middle" class="bigger_and_bolder">
@@ -603,7 +603,7 @@ vertical-align:top;
         
                 </td>
             
-       <!-- <td align="right" valign="right" class="not_bigger_but_bolder" >
+     <td align="right" valign="right" class="not_bigger_but_bolder" >
 
       <a href="/ca/en/our_story/corporate_info.html">Corporate Info</a>
       
@@ -627,9 +627,9 @@ vertical-align:top;
      <span>|</span>                 
      <span style="color:#;font-size:px;"> &copy;2010-2013&nbsp;&nbsp;McDonald's</span>
        
-       </td> -->
+       </td>
     </tr>
-</table>
+</table> -->
         </div>
 </div></div>
 </div><div class="section"><div class="new"></div>
