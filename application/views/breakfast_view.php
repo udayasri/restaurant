@@ -427,7 +427,7 @@ vertical-align:top;
 					echo '</span>';
 					echo '</p>';
 					echo '</div>';
-					echo '<button type="button" title="Add to Cart" class="button btn-cart color1" onclick="setLocation("http://pizzahut.lk/index.php/magic-pan-special-deal.html?options=cart")"><span><span>Add to Cart</span></span></button>';
+					echo '<button type="button" title="Add to Cart" class="button btn-cart color1" onclick="setLocation('.base_url().'shoppingcart )"><span><span>Add to Cart</span></span></button>';
 					echo '</td>';
 					
 					$i++;
