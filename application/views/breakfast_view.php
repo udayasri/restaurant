@@ -210,7 +210,7 @@ float: left;
 					</li>
             
                     <li id="simplenav_li">
-                        <a href="#" id="simplenav_link" class="nav_item" style="background-image: url('images/desert.png');"></a>
+                        <a href="<?php echo base_url()?>desserts" id="simplenav_link" class="nav_item" style="background-image: url('images/desert.png');"></a>
 					</li>
             
                     <li id="promonav_li">
@@ -325,7 +325,7 @@ function _utf8_encode(string) {
             <div id="breadcrumb">
                 <div class="mcdonaldsbreadcrumb breadcrumb">
 		        	<div class="breadCrumb"> 
-						<a href='<?php echo base_url()?>home'>Menu</a>&nbsp;<span class='bd_separator'>/</span>&nbsp;<a href='#' class='last'>Breakfast</a>      
+						<a href='<?php echo base_url()?>home'>Menu</a>&nbsp;<span class='bd_separator'>/</span>&nbsp;<a href='<?php echo base_url()?>breakfast' class='last'>Breakfast</a>      
 		        	</div>      
 		       </div>
 

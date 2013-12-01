@@ -84,7 +84,7 @@
 					</li>
             
                     <li id="simplenav_li">
-                        <a href="#l" id="simplenav_link" class="nav_item" style="background-image: url('images/desert.png');"></a>
+                        <a href="<?php echo base_url()?>desserts" id="simplenav_link" class="nav_item" style="background-image: url('images/desert.png');"></a>
 					</li>
             
                     <li id="promonav_li">

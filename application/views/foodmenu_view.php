@@ -281,47 +281,45 @@ var baseurl =  "<?php echo base_url() ?>";
 	
 	
 	<!-- edit food info up content div -->
-	// <div id="editfood_info" >
-		// <!-- form statrts  -->
-		// <form class="form-horizontal" action="#">
-			// <fieldset>
-				// <div class="widget row-fluid">
-				    // <div class="well">
-						// <div class="control-group">
-					            // <label class="control-label">Food Name</label>
-					            // <div class="controls"><input type="text" id="food_name" name="regular" class="span12" /></div>
-					    // </div>
-					    // <div class="control-group">
-					            // <label class="control-label">Food Price</label>
-					            // <div class="controls"><input type="text" name="regular" class="span12" id="food_price" /></div>
-					    // </div>
-					    // <div class="control-group">
-	                        // <label class="control-label">Food Category</label>
-	                        // <div class="controls">
-	                            // <select data-placeholder="Food Category" class="select" tabindex="2" id="food_category">
-	                                // <option value="Favourite">Favourite</option> 
-	                                // <option value="Breakfast">Breakfast</option> 
-	                                // <option value="Deserts">Deserts</option> 
-	                                // <option value="Beverages">Beverages</option> 
-	                            // </select>
-	                        // </div>             
-	                    // </div>
-	                    // <div class="control-group">
-	                        // <label class="control-label">Food Image </label>
-	                        // <div class="controls">
-	                            // <input type="file" class="styled">
-	                        // </div>
-	                    // </div>
-// 	                    
-	                    // <!-- <div class="form-actions">
-	                        // <button type="submit" class="btn btn-primary">Save</button>
-	                    // </div> -->
-// 	                    
-	                // </div>
-				// </div>
-			// </fieldset>
-		// </form>
-	// </div>
+	 <div id="editfood_info" >
+		 <!-- form statrts  -->
+		 <form class="form-horizontal" action="#">
+			 <fieldset>
+				 <div class="widget row-fluid">
+				     <div class="well">
+						 <div class="control-group">
+					             <label class="control-label">Food Name</label>
+					             <div class="controls"><input type="text" id="food_name" name="regular" class="span12" /></div>
+					     </div>
+					     <div class="control-group">
+					             <label class="control-label">Food Price</label>
+					             <div class="controls"><input type="text" name="regular" class="span12" id="food_price" /></div>
+					     </div>
+					     <div class="control-group">
+	                         <label class="control-label">Food Category</label>
+	                         <div class="controls">
+	                             <select data-placeholder="Food Category" class="select" tabindex="2" id="food_category">
+	                                 <option value="Favourite">Favourite</option> 
+	                                 <option value="Breakfast">Breakfast</option> 
+	                                 <option value="Deserts">Deserts</option> 
+	                                 <option value="Beverages">Beverages</option> 
+	                             </select>
+	                         </div>             
+	                     </div>
+	                     <div class="control-group">
+	                         <label class="control-label">Food Image </label>
+	                         <div class="controls">
+	                             <input type="file" class="styled">
+	                         </div>
+	                     </div> 	                    
+	                     <!-- <div class="form-actions">
+	                         <button type="submit" class="btn btn-primary">Save</button>
+	                     </div> -->	                    
+	                 </div>
+				 </div>
+			 </fieldset>
+		 </form>
+	 </div>
 	
 	<div id="deletefood_info">
 	  <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>Do you want to delete this food item ? </p>
