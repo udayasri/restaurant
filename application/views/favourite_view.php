@@ -143,7 +143,7 @@
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/DD_roundies_0.0.2a-min.js"></script>   
 
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/swfobject.js"></script>
-<title>Beverages :: McDonalds</title>
+<title>Favourite :: McDonalds</title>
 
 <style>
 button.button 
@@ -182,7 +182,7 @@ float: left;
 </style>
 </head>  
  
-<body class="page genericpage " style="background:#FFFFFF; background-image: url('images/1336914298734.jpg'); background-repeat: no-repeat; background-position:center top;">
+<body class="page genericpage " style="background:#FFFFFF; background-image: url('images/1336914282907.jpg'); background-repeat: no-repeat; background-position:center top;">
     <div id="document_wrapper">
         
         <a name="top"></a>
@@ -325,7 +325,7 @@ function _utf8_encode(string) {
             <div id="breadcrumb">
                 <div class="mcdonaldsbreadcrumb breadcrumb">
 		        	<div class="breadCrumb"> 
-						<a href='<?php echo base_url()?>home'>Menu</a>&nbsp;<span class='bd_separator'>/</span>&nbsp;<a href='<?php echo base_url()?>beverages' class='last'>Beverages</a>      
+						<a href='<?php echo base_url()?>home'>Menu</a>&nbsp;<span class='bd_separator'>/</span>&nbsp;<a href='<?php echo base_url()?>favourite' class='last'>Favourite</a>      
 		        	</div>      
 		       </div>
 
@@ -393,7 +393,7 @@ function _utf8_encode(string) {
                     $('[title]').removeAttr('title');
                 });
                 </script>               
-                <img title="Love every morning." style="padding:0px 0px 0px 0px " alt="Love every morning." width="590.0" class="cq-dd-image" src="images/tagline_beverages.png"></a><br>
+                <img title="Love every morning." style="padding:0px 0px 0px 0px " alt="Love every morning." width="590.0" class="cq-dd-image" src="images/tagline_snack-sides.png"></a><br>
                     </div>
                     </div></td>
                 
@@ -414,8 +414,8 @@ vertical-align:top;
 }
 </style>
     <div class="products" style="background:#fffdea; margin-top:0px; padding:45px; -moz-border-radius: 0px 0px 10px 10px; -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px;">
-	<h1>Favourite</h1>
-	<p style="width:400px;">Whether you need a little pick-me-up to get you through the afternoon or a companion for your favourite sandwich, we’ve got you covered.</p>
+	<h1>Beverages</h1>
+	<p style="width:400px;">Refresh your taste buds with just the right drink. From ice-cold Diet Coke and orange juice* to freshly brewed Premium Roast Coffee, we’ve got the ideal choice for your favourite menu items</p>
 	<table>
 		<!-- row 1 -->
 		<tr>

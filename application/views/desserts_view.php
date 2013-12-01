@@ -218,7 +218,7 @@ float: left;
 					</li>
             
                     <li id="noflyout_last_li">
-                        <a href="#" id="noflyout_last_link" class="nav_item" style="background-image: url('images/favourite.png');"></a>
+                        <a href="<?php echo base_url()?>favourite" id="noflyout_last_link" class="nav_item" style="background-image: url('images/favourite.png');"></a>
                     
 					</li>
             
