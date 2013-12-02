@@ -45,7 +45,14 @@
 
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/swfobject.js"></script>
 
-<title>Menu :: McDonalds</title>
+<script src="<?php echo base_url();?>assets/js/ajax_customer_login.js"></script>
+
+<script>
+	var baseurl =  "<?php echo base_url() ?>";
+</script>
+
+
+<title>User Login :: McDonalds</title>
 
      
 
@@ -391,15 +398,15 @@ padding:0px;
     	
     	<div style="float: left; width: 100%; margin-bottom: 20px;">
 	    	<label style="margin-right: 50px">User Name  </label>
-	    	<input type="text" id="username" name="username" />
+	    	<input type="text" id="cutomername" name="cutomername" />
         </div>
         <div style="float: left; width: 100%; margin-bottom: 20px; ">
 	        <label style="margin-right: 60px">Password</label>
-	        <input type="password" id="password" name="password" />
+	        <input type="password" id="custpass" name="custpass" />
         </div>
         
         <div style="float:left; width: 100%">
-        	<button type="submit" style="margin-right: 36px; width: 80px">Login</button>
+        	<button type="submit" name="cust_login" id="cust_login" style="margin-right: 36px; width: 80px">Login</button>
         	<a href="<?php echo base_url()?>userregister"><button type="button" id="register" style="width: 80px" >Register</button></a>
         </div>
         <!-- <table>

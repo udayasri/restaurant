@@ -62,7 +62,7 @@
         <div class="well">
             <!-- <form action="foodmenu" class="row-fluid"> -->
             <?php $attributes = array('class' => 'row-fluid', 'id' => 'login_form');?>
-			<?php echo form_open('login/login_validate',$attributes);?>
+			<?php echo form_open('userlogin/login_validate',$attributes);?>
                 <div class="control-group">
                     <label class="control-label">Username</label>
                     <div class="controls"><input class="span12 validate[required]" type="text" name="regular" placeholder="username" id="username" /></div>

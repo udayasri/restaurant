@@ -44,8 +44,14 @@
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/DD_roundies_0.0.2a-min.js"></script>   
 
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/swfobject.js"></script>
+<!-- javascripts for login form validation-->
+<script src="<?php echo base_url();?>assets/js/ajax_user_creater.js"></script>
 
-<title>Menu :: McDonalds</title>
+<script>
+	var baseurl =  "<?php echo base_url() ?>";
+</script>
+
+<title>User Register :: McDonalds</title>
 
      
 
@@ -388,7 +394,7 @@ padding:0px;
     <div style="color:#000;background:#ffffff; margin-top:0px; padding:42px; -moz-border-radius: 0px 0px 10px 10px; 
     -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px; height: 300px">
         
-    	<?php echo form_open('login/login_validate');?>
+    	<?php echo form_open('userregister/registerUser');?>
     	
 		<div style="float: left; width: 100%; margin-bottom: 20px;">
 	    	<label style="margin-right: 50px">First Name </label>
@@ -417,9 +423,10 @@ padding:0px;
         
         
         <div style="float:left; width: 100%">
-        	<button type="submit" style="margin-right: 36px; width: 80px">Submit</button>
+        	<button type="button" id="user_create" name="user_create" style="margin-right: 36px; width: 80px">Submit</button>
         	<!-- <button type="button" id="register" style="width: 80px">Register</button> -->
         </div>
+      </form>
         <!-- <table>
             <tr valign="top">
                 <td width="290" valign="top">

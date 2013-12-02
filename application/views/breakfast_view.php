@@ -350,13 +350,37 @@ function _utf8_encode(string) {
 		     }
 		     </script></div>
 		     
-		     <div id="breadcrumb">
-	        <div class="mcdonaldsbreadcrumb breadcrumb">
-	          
-	         <a href='<?php echo base_url()?>userlogin' class='last'>Login</a>           
-	       
-	       </div>
-	    </div>
+<div id="notification">
+       
+ <?php 
+	if( $this->session->userdata('customername') != null )
+	{
+		echo '<div id="search">';
+	   	echo '<div class="parbase search"> ';
+		echo '<a href="'.base_url().'userlogin/log_out" class="last">Logout</a>';         
+		echo '</div></div>';
+        ?>
+<div id="language">
+    <div class="siteToggler">
+    	<?php 
+    		
+	   		echo $this->session->userdata('customername') ;
+	   		
+    	?> 
+</div> 
+</div>
+<?php } 
+	else 
+	{
+		echo '<div id="search">';
+   		echo '<div class="parbase search"> ';
+   		echo '<a href="'.base_url().'userlogin" class="last">Login</a>';
+   		echo '</div></div>';
+	}
+
+?>
+
+</div>
 		
 		           </div>
       
