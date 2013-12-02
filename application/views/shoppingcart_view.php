@@ -11,14 +11,13 @@
 <META name="_breadcrumb" content="/ca/en/menu" />
 
 <?php include 'frontend_header.php'?>
-<!-- javascripts for login form validation-->
-<script src="<?php echo base_url();?>assets/js/ajax_user_creater.js"></script>
 
 <script>
 	var baseurl =  "<?php echo base_url() ?>";
 </script>
 
-<title>User Register :: McDonalds</title>
+
+<title>User Login :: McDonalds</title>
 
      
 
@@ -235,7 +234,7 @@ function siteToggler(lang,link,redirectSearchResultToSearch)
 	    <div id="breadcrumb">
 	        <div class="mcdonaldsbreadcrumb breadcrumb">
 	          
-	         <a href='<?php echo base_url()?>userlogin' class='last'>Login</a>         
+	         <a href='<?php echo base_url()?>userlogin' class='last'>Login</a>             
 	       
 	       </div>
 	    </div>
@@ -358,42 +357,23 @@ padding:0px;
 
 </style>
 
-    <div style="color:#000;background:#ffffff; margin-top:0px; padding:42px; -moz-border-radius: 0px 0px 10px 10px; 
-    -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px; height: 300px">
+    <div style="color:#000;background:#ffffff; margin-top:0px; padding:42px; -moz-border-radius: 0px 0px 10px 10px; -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px; height: 100px">
         
-    	<?php echo form_open('userregister/registerUser');?>
+    	<?php echo form_open('login/login_validate');?>
     	
-		<div style="float: left; width: 100%; margin-bottom: 20px;">
-	    	<label style="margin-right: 50px">First Name </label>
-	    	<input type="text" id="firstname" name="firstname" />
-        </div>
-        
-        <div style="float: left; width: 100%; margin-bottom: 20px;">
-	    	<label style="margin-right: 51px">Last Name </label>
-	    	<input type="text" id="lastname" name="lastname" />
-        </div>
-        
-        <div style="float: left; width: 100%; margin-bottom: 20px;">
+    	<div style="float: left; width: 100%; margin-bottom: 20px;">
 	    	<label style="margin-right: 50px">User Name  </label>
-	    	<input type="text" id="username" name="username" />
+	    	<input type="text" id="cutomername" name="cutomername" />
         </div>
         <div style="float: left; width: 100%; margin-bottom: 20px; ">
-	        <label style="margin-right: 58px">Password</label>
-	        <input type="password" id="password" name="password" />
+	        <label style="margin-right: 60px">Password</label>
+	        <input type="password" id="custpass" name="custpass" />
         </div>
-        
-        <div style="float: left; width: 100%; margin-bottom: 20px;">
-	    	<label style="margin-right: 82px">Email</label>
-	    	<input type="text" id="email" name="email" />
-        </div>
-        
-        
         
         <div style="float:left; width: 100%">
-        	<button type="button" id="user_create" name="user_create" style="margin-right: 36px; width: 80px">Submit</button>
-        	<!-- <button type="button" id="register" style="width: 80px">Register</button> -->
+        	<button type="submit" name="cust_login" id="cust_login" style="margin-right: 36px; width: 80px">Login</button>
+        	<a href="<?php echo base_url()?>userregister"><button type="button" id="register" style="width: 80px" >Register</button></a>
         </div>
-      </form>
         <!-- <table>
             <tr valign="top">
                 <td width="290" valign="top">
