@@ -37,6 +37,26 @@ class Orders extends CI_Controller
 				
 				redirect('orders');
 			}
+		else
+		{
+			redirect('orders');
+		}
+	}
+	
+	public function deleteOrder()
+	{
+		if( $this->uri->segment(3) != null )
+		{
+			$query = 'DELETE FROM orders  WHERE order_id = ?';
+		
+			$this->order_model->deleteOrder( $query, $this->uri->segment(3) );
+			
+			redirect('orders');
+		}
+		else
+		{
+			redirect('orders');
+		}
 	}
 	
 }

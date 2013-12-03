@@ -59,7 +59,7 @@
 			        <ul class="navigation widget">
 			            <li ><a href="<?php echo base_url();?>foodmenu" title=""><i class="icon-list"></i>Food Menu</a></li>
 			            <li><a href="<?php echo base_url();?>newfood" title=""><i class="icon-plus-sign"></i>Add New Food</a></li>
-			            <li class="active" ><a href="<?php echo base_url();?>orders" title=""><i class="icon-asterisk"></i>Orders<strong>3</strong></a></li>
+			            <li class="active" ><a href="<?php echo base_url();?>orders" title=""><i class="icon-asterisk"></i>Orders<strong><?php echo count($orderDetails); ?></strong></a></li>
 			        	<li><a href="<?php echo base_url();?>orders" title=""><i class="ico-file"></i>Reports</a></li>
 			        </ul>
 			        <!-- /main navigation -->
@@ -83,7 +83,7 @@
                                     <th>Ordered By </th>
                                     <th>Contact</th>
                                     <th>Items</th>
-                                    <th>Time</th>
+                                    <!-- <th>Time</th> -->
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
@@ -96,7 +96,7 @@
 	                                echo '<td>'; 	echo $row->ordered_by ;		echo '</td>';
 	                                echo '<td>'; 	echo $row->contact; 		echo '</td>';
 	                                echo '<td>'; 	echo $row->items; 			echo '</td>';
-	                                echo '<td>'; 	echo $row->ordered_date; 	echo '</td>';
+	                                // echo '<td>'; 	echo $row->ordered_date; 	echo '</td>';
 	                                echo '<td>'; 	echo $row->status == '1' ?  'new' :  'delivered'; echo '</td>';
 	                                echo '<td>';
 	                                        echo '<ul class="table-controls">';
@@ -105,7 +105,7 @@
 	                                        	 echo '<li><a href="'.base_url().'orders/delivered/'.$row->order_id.'" class="tip" title="Delivered"><i class="fam-tick"></i></a> </li>';
 	                                        }
 	                                      
-	                                         echo '<li><a href="#" class="tip" title="Remove order"><i class="fam-cross"></i></a> </li>
+	                                         echo '<li><a href="'.base_url().'orders/deleteOrder/'.$row->order_id.'" class="tip" title="Remove order"><i class="fam-cross"></i></a> </li>
 	                                        </ul>';
 	                                echo  '</td>';
                                 echo '</tr>';

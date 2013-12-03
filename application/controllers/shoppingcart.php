@@ -28,7 +28,6 @@ class Shoppingcart extends CI_Controller
 			{
 				if( count( $this->view_data['food_id'][$i] ) == 0 )
 				{
-					echo 'vfgfdgdfgdfgdfgdfgdfgdfgfdgddd';
 					$this->view_data['list'][$i] = NULL;
 					$this->view_data['list'] = NULL;
 			
@@ -104,7 +103,7 @@ class Shoppingcart extends CI_Controller
 					$foodquantity = $this->input->post('food_quntitytopass'.$i);
 					
 					$total += intval( $foodprice );
-					$items = $foodname.$i."-".$foodquantity.$i.",";
+					$items = $foodname.$i." - ".$foodquantity.$i.",";
 					
 				}
 				$status = 1 ;

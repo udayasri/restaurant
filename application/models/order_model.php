@@ -29,4 +29,15 @@ class Order_model extends CI_Model {
 				return false;
 			}
 	}
+	
+	public function deleteOrder( $query, $params )
+	{
+		$result = $this->db->query( $query,$params );
+			if($result != false){
+				return true;
+			}
+			else{
+				return false;
+			}
+	}
 }
