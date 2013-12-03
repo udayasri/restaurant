@@ -12,12 +12,34 @@
 
 <?php include 'frontend_header.php'?>
 
-<script>
-	$(".paytax,.payship").live("keyup", function() {
-		
-	});
-</script>
 <script src="<?php echo base_url()?>assets/js/ajax_update_shoppingcart.js"></script>
+<script>
+var baseurl =  "<?php echo base_url() ?>";
+
+$('#place_order').live('click',function()
+{
+	logged_user = $("#loggeduser").val();
+	
+	if( logged_user == 'null' )
+	{
+		window.location.href = baseurl+"userlogin";
+	}
+	else
+	{
+		$("#cart").css("display","none");
+		$("#bank_details").css("display","block");
+	}
+	
+});
+
+$('.bank').live('click',function()
+{
+	$( "#shopping_cart_update" ).submit();
+});
+
+
+	
+</script>
 
 <style>
 	.everythingtable{
@@ -174,7 +196,7 @@
 					</li>
             
                     <li id="simplenav_li">
-                        <a href="<?php echo base_url()?>desserts" id="simplenav_link" class="nav_item" style="background-image: url('images/desert.png');"></a>
+                        <a href="<?php echo base_url()?>favourite" id="simplenav_link" class="nav_item" style="background-image: url('images/desert.png');"></a>
 					</li>
             
                     <li id="promonav_li">
@@ -182,7 +204,7 @@
 					</li>
             
                     <li id="noflyout_last_li">
-                        <a href="<?php echo base_url()?>favourite" id="noflyout_last_link" class="nav_item" style="background-image: url('images/favourite.png');"></a>
+                        <a href="<?php echo base_url()?>desserts" id="noflyout_last_link" class="nav_item" style="background-image: url('images/favourite.png');"></a>
                     
 					</li>
             
@@ -475,7 +497,7 @@ padding:0px;
 
 </style>
 
-    <div style="color:#000;background:#ffffff; margin-top:0px; padding:42px; -moz-border-radius: 0px 0px 10px 10px; -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px; height: auto">
+    <div id="cart" style="color:#000;background:#ffffff; margin-top:0px; padding:42px; -moz-border-radius: 0px 0px 10px 10px; -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px; height: auto">
       <h2>Shopping Cart </h2>
      <?php $attributes = array('id' => 'shopping_cart_update');?>
      <?php echo form_open('shoppingcart/placeorder' , $attributes );?>   
@@ -522,14 +544,36 @@ padding:0px;
 		  </tr>
 		</table>
        </div>
+       <?php 
+       	if( $this->session->userdata('customername') != null )
+       	{
+       		echo '<input type="hidden" name="loggeduser" id ="loggeduser" value = "'.$this->session->userdata('customername').'" >';
+       	}
+		else
+		{
+			echo '<input type="hidden" name="loggeduser" id ="loggeduser" value = "null" >';
+		}
        
-       <p>*<?php echo $total; ?>$ will be deducted from your account  </p>
+       ?>
+       
+       <!-- <p>*<?php echo $total; ?>$ will be deducted from your account  </p> -->
  
         <div style="float:left; width: 100%">
-        	<button type="submit" name="place_order" id="place_order" style="margin-right: 36px; width: 80px">Order </button>
+        	<button type="button" name="place_order" id="place_order" style="margin-right: 36px; width: 80px">Order </button>
         	<!-- <button type="button" name="updateshoppingcart" id="updateshoppingcart" style="margin-right: 36px; width: 80px">Update </button> -->
         	<a href="<?php echo base_url()?>breakfast"><button type="button" id="register" style="width: 160px" >Continue Shopping </button></a>
         </div>
+       </form>
+    </div>
+    
+    <div id="bank_details" style="display:none ;color:#000;background:#ffffff; margin-top:0px; padding:42px; -moz-border-radius: 0px 0px 10px 10px; -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px; height: 100px">
+        
+    	<h3 style="margin-bottom: 10px">Select a bank to pay your order </h3>
+    	
+    	<img src="<?php echo base_url()?>images/rhb_bank.png" style =" margin-right: 20px; cursor:pointer" class = "bank">
+    	<img src="<?php echo base_url()?>images/mb_bank.png" style =" margin-right: 20px; cursor:pointer" class = "bank" >
+    	<img src="<?php echo base_url()?>images/CIMB_bank.png" class = "bank" style ="cursor:pointer" >
+ 
     </div>
 
       </div>

@@ -177,7 +177,7 @@ float: left;
 					</li>
             
                     <li id="simplenav_li">
-                        <a href="<?php echo base_url()?>desserts" id="simplenav_link" class="nav_item" style="background-image: url('images/desert.png');"></a>
+                        <a href="<?php echo base_url()?>favourite" id="simplenav_link" class="nav_item" style="background-image: url('images/desert.png');"></a>
 					</li>
             
                     <li id="promonav_li">
@@ -185,7 +185,7 @@ float: left;
 					</li>
             
                     <li id="noflyout_last_li">
-                        <a href="<?php echo base_url()?>favourite" id="noflyout_last_link" class="nav_item" style="background-image: url('images/favourite.png');"></a>
+                        <a href="<?php echo base_url()?>desserts" id="noflyout_last_link" class="nav_item" style="background-image: url('images/favourite.png');"></a>
                     
 					</li>
             
@@ -416,7 +416,7 @@ vertical-align:top;
 </style>
     <div class="products" style="background:#fffdea; margin-top:0px; padding:45px; -moz-border-radius: 0px 0px 10px 10px; -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px;">
 	<h1>Desserts & Shakes</h1>
-	<p style="width:400px;">rop by for a delectable dessert or a simple boost of sweetness. Choose from our delicious McFlurry®, sundaes, cones, cool Triple Thick Milkshakes, tasty, baked pies and much more..</p>
+	<p style="width:400px;">rop by for a delectable dessert or a simple boost of sweetness. Choose from our delicious McFlurry, sundaes, cones, cool Triple Thick Milkshakes, tasty, baked pies and much more..</p>
 	<table>
 		<!-- row 1 -->
 		<tr>
@@ -520,7 +520,7 @@ vertical-align:top;
 		</tr>
 	</table>
 	<sup style="color:#929292">At participating McDonald's restaurants. Product availability varies by restaurant.</sup><br/>
-<sup style="color:#929292">*Not available in Quebec. to see the Traditional Breakfast, available at participating McDonald’s restaurants in Quebec</sup>
+<!-- <sup style="color:#929292">*Not available in Quebec. to see the Traditional Breakfast, available at participating McDonald’s restaurants in Quebec</sup> -->
 </div>
       </div>
 </div>

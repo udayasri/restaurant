@@ -57,7 +57,7 @@
 					</li>
             
                     <li id="simplenav_li">
-                        <a href="<?php echo base_url()?>desserts" id="simplenav_link" class="nav_item" style="background-image: url('images/desert.png');"></a>
+                        <a href="<?php echo base_url()?>favourite" id="simplenav_link" class="nav_item" style="background-image: url('images/desert.png');"></a>
 					</li>
             
                     <li id="promonav_li">
@@ -65,7 +65,7 @@
 					</li>
             
                     <li id="noflyout_last_li">
-                        <a href="<?php echo base_url()?>favourite" id="noflyout_last_link" class="nav_item" style="background-image: url('images/favourite.png');"></a>
+                        <a href="<?php echo base_url()?>desserts" id="noflyout_last_link" class="nav_item" style="background-image: url('images/favourite.png');"></a>
                     
 					</li>
             
