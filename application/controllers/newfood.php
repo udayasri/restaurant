@@ -7,6 +7,7 @@ class Newfood extends CI_Controller
         parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->library('upload');
+		$this->load->model('order_model');
     }
 	
 	// This will load newfood_view
@@ -14,7 +15,8 @@ class Newfood extends CI_Controller
 	{
 		if( $this->session->userdata('username') != null )
 		{
-			$this->load->view( 'newfood_view.php' );
+			$this->view_data['orderDetails'] = $this->order_model->getOrderDetails();
+			$this->load->view( 'newfood_view.php',$this->view_data  );
 		}
 		else
 		{
