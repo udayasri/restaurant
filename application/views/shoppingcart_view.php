@@ -13,6 +13,118 @@
 <?php include 'frontend_header.php'?>
 
 <script>
+	$(".paytax,.payship").live("keyup", function() {
+		
+	});
+</script>
+
+<style>
+	.CSSTableGenerator {
+		margin:0px;padding:0px;
+		width:100%;
+		box-shadow: 10px 10px 5px #888888;
+		border:1px solid #000000;
+		
+		-moz-border-radius-bottomleft:0px;
+		-webkit-border-bottom-left-radius:0px;
+		border-bottom-left-radius:0px;
+		
+		-moz-border-radius-bottomright:0px;
+		-webkit-border-bottom-right-radius:0px;
+		border-bottom-right-radius:0px;
+		
+		-moz-border-radius-topright:0px;
+		-webkit-border-top-right-radius:0px;
+		border-top-right-radius:0px;
+		
+		-moz-border-radius-topleft:0px;
+		-webkit-border-top-left-radius:0px;
+		border-top-left-radius:0px;
+	}.CSSTableGenerator table{
+	    border-collapse: collapse;
+	        border-spacing: 0;
+		width:100%;
+		height:100%;
+		margin:0px;padding:0px;
+	}.CSSTableGenerator tr:last-child td:last-child {
+		-moz-border-radius-bottomright:0px;
+		-webkit-border-bottom-right-radius:0px;
+		border-bottom-right-radius:0px;
+	}
+	.CSSTableGenerator table tr:first-child td:first-child {
+		-moz-border-radius-topleft:0px;
+		-webkit-border-top-left-radius:0px;
+		border-top-left-radius:0px;
+	}
+	.CSSTableGenerator table tr:first-child td:last-child {
+		-moz-border-radius-topright:0px;
+		-webkit-border-top-right-radius:0px;
+		border-top-right-radius:0px;
+	}.CSSTableGenerator tr:last-child td:first-child{
+		-moz-border-radius-bottomleft:0px;
+		-webkit-border-bottom-left-radius:0px;
+		border-bottom-left-radius:0px;
+	}.CSSTableGenerator tr:hover td{
+		
+	}
+	.CSSTableGenerator tr:nth-child(odd){ background-color:#ffffff; }
+	.CSSTableGenerator tr:nth-child(even)    { background-color:#ffffff; }.CSSTableGenerator td{
+		vertical-align:middle;
+		
+		
+		border:1px solid #000000;
+		border-width:0px 1px 1px 0px;
+		text-align:left;
+		padding:7px;
+		font-size:10px;
+		font-family:Arial;
+		font-weight:normal;
+		color:#000000;
+	}.CSSTableGenerator tr:last-child td{
+		border-width:0px 1px 0px 0px;
+	}.CSSTableGenerator tr td:last-child{
+		border-width:0px 0px 1px 0px;
+	}.CSSTableGenerator tr:last-child td:last-child{
+		border-width:0px 0px 0px 0px;
+	}
+	.CSSTableGenerator tr:first-child td{
+			background:-o-linear-gradient(bottom, #ff0000 5%, #bc3200 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff0000), color-stop(1, #bc3200) );
+		background:-moz-linear-gradient( center top, #ff0000 5%, #bc3200 100% );
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000", endColorstr="#bc3200");	background: -o-linear-gradient(top,#ff0000,bc3200);
+	
+		background-color:#ff0000;
+		border:0px solid #000000;
+		text-align:center;
+		border-width:0px 0px 1px 1px;
+		font-size:14px;
+		font-family:Arial;
+		font-weight:bold;
+		color:#ffffff;
+	}
+	.CSSTableGenerator tr:first-child:hover td{
+		background:-o-linear-gradient(bottom, #ff0000 5%, #bc3200 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff0000), color-stop(1, #bc3200) );
+		background:-moz-linear-gradient( center top, #ff0000 5%, #bc3200 100% );
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000", endColorstr="#bc3200");	background: -o-linear-gradient(top,#ff0000,bc3200);
+	
+		background-color:#ff0000;
+	}
+	.CSSTableGenerator tr:first-child td:first-child{
+		border-width:0px 0px 1px 0px;
+	}
+	.CSSTableGenerator tr:first-child td:last-child{
+		border-width:0px 0px 1px 1px;
+	}
+	
+	textarea:focus, input:focus{
+    	outline: 0;
+	}
+	input
+	{
+		outline:none;
+	}
+
+</style>
+<script>
 	var baseurl =  "<?php echo base_url() ?>";
 </script>
 
@@ -357,79 +469,59 @@ padding:0px;
 
 </style>
 
-    <div style="color:#000;background:#ffffff; margin-top:0px; padding:42px; -moz-border-radius: 0px 0px 10px 10px; -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px; height: 100px">
-        
-    	<?php echo form_open('login/login_validate');?>
-    	
-    	<div style="float: left; width: 100%; margin-bottom: 20px;">
-	    	<label style="margin-right: 50px">User Name  </label>
-	    	<input type="text" id="cutomername" name="cutomername" />
-        </div>
-        <div style="float: left; width: 100%; margin-bottom: 20px; ">
-	        <label style="margin-right: 60px">Password</label>
-	        <input type="password" id="custpass" name="custpass" />
-        </div>
-        
+    <div style="color:#000;background:#ffffff; margin-top:0px; padding:42px; -moz-border-radius: 0px 0px 10px 10px; -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px; height: auto">
+      <h2>Shopping Cart </h2>
+     <?php echo form_open('login/login_validate');?>   
+       <div class="CSSTableGenerator" style="margin-bottom: 20px"> 
+		<table width="100%%" border="1" style="color: #000">
+		  <tr>
+		    <td>Food Item</td>
+		    <td>Quantity</td>
+		    <td>Price </td>
+		    <td>Remove</td>
+		  </tr>
+		  <?php //print_r( $list ); 
+        	$total = 0 ;
+	        for($i =0; $i<count( $list );$i++)
+	        {
+				for($j = 0 ; $j<count($list[$i]);$j++)
+				{
+					echo '<tr>';
+				    echo '<td>'; echo $list[$i][$j]->food_name; echo '</div></td>';
+					echo '<td>  <div contenteditable id ="food_quntity'.$i.'">'; echo '1'; ; echo '</div></td>';
+					echo '<td>'; echo '<div id ="food_price'.$i.'">'. $list[$i][$j]->food_price. '</div>'; echo '</td>';
+					echo '<td>';?> <a href="<?php base_url();?>"><img src="<?php echo base_url()?>assets/img/delete.png" style="float:left; margin-top:9px; margin-right:9px; cursor:pointer" id="x" class="delete_image del"/></a> <?php echo '</td>';
+				  	echo '</tr>';
+					
+					$total +=  $list[$i][$j]->food_price;
+					
+				}
+			}
+			
+	        
+	        ?>
+		  
+		    <td>Total</td>
+		    <td>&nbsp;</td>
+		    <td><?php echo $total ; ?></td>
+		    <td>&nbsp; </td>
+		  </tr>
+		</table>
+       </div>
+ 
         <div style="float:left; width: 100%">
-        	<button type="submit" name="cust_login" id="cust_login" style="margin-right: 36px; width: 80px">Login</button>
-        	<a href="<?php echo base_url()?>userregister"><button type="button" id="register" style="width: 80px" >Register</button></a>
+        	<button type="submit" name="cust_login" id="cust_login" style="margin-right: 36px; width: 80px">Order </button>
+        	<a href="<?php echo base_url()?>userregister"><button type="button" id="register" style="width: 160px" >Continue Shopping </button></a>
         </div>
-        <!-- <table>
-            <tr valign="top">
-                <td width="290" valign="top">
-				<h1>Menu</h1>
-				<p><a href="/ca/en/menu/full_menu/mccafe.html">McCafe<sup></sup></a><img src="images/small_carrot.png" align="absmiddle"><br>
-				<span style="color:#838383">Discover the rich, bold flavour.</span>
-				</p>
-				<p><a href="/ca/en/menu/full_menu/value_picks.html">Value Picks<sup></sup></a><img src="images/small_carrot.png" align="absmiddle"><br>
-				<span style="color:#838383">Turn your change into something tasty.</span>
-				</p>
-				<p><a href="/ca/en/menu/full_menu/sandwiches.html">Burgers, Sandwiches, & Wraps</a><img src="images/small_carrot.png" align="absmiddle"><br>
-				<span style="color:#838383">You know you want one.</span>
-				</p>
-				<p><a href="/ca/en/menu/full_menu/chicken.html">Chicken</a><img src="images/small_carrot.png" align="absmiddle"><br>
-				<span style="color:#838383">Juicy, tender and irresistible.</span>
-				</p>
-				<p><a href="/ca/en/menu/full_menu/breakfast.html">Breakfast</a><img src="images/small_carrot.png" align="absmiddle"><br>
-				<span style="color:#838383">Love every morning.</span>
-				</p>
-				</td>
-				                <td width="290" valign="top">
-				<h1>&nbsp;</h1>
-				<p><a href="/ca/en/menu/full_menu/salads.html">Salads</a><img src="images/small_carrot.png" align="absmiddle"><br>
-				<span style="color:#838383">Fresh, yummy freedom in a bowl.</span>
-				</p>
-				<p><a href="/ca/en/menu/full_menu/snacks.html">Snacks & Sides</a><img src="images/small_carrot.png" align="absmiddle"><br>
-				<span style="color:#838383">Delight your taste buds, any time.</span>
-				</p>
-				<p><a href="/ca/en/menu/full_menu/beverages.html">Beverages</a><img src="images/small_carrot.png" align="absmiddle"><br>
-				<span style="color:#838383">Refreshing companions.</span>
-				</p>
-				<p><a href="/ca/en/menu/full_menu/desserts_shakes.html">Desserts & Shakes</a><img src="images/small_carrot.png" align="absmiddle"><br>
-				<span style="color:#838383">Celebrate the sweet life.</span>
-				</p>
-				                </td>
-				                <td width="200" valign="top">
-				<h1>Meal Bundles</h1>
-				<p><a href="/ca/en/menu/meal_bundles/extra_value_meals.html">Extra Value Meals</a><img src="images/small_carrot.png" align="absmiddle"><br><span style="color:#838383">Treat yourself to tasty deals.</span></p>
-				<p><a href="/ca/en/menu/meal_bundles/happy_meal.html">Happy Meal</a><img src="images/small_carrot.png" align="absmiddle"><br><span style="color:#838383"> You want the very best for your kids, and so do we!</span></p>              
-				                </td>                
-            </tr>
-        </table> -->
     </div>
 
       </div>
 </div>
 </div>
+    </div>
 
-        </div>
-        
-        
         <div id="content_section" style="  ">
-        
-                
- 
-  
+
     <div id="main_content_segment" class="clear">
         <div class="main_content_inner_ko" style="">
             <div class="parsys genericpagecontent"></div>
@@ -441,23 +533,13 @@ padding:0px;
 </div><div class="section"><div class="new"></div>
 </div>
 </div>
-
             </div>
-              
-    
     </div>
-    
-            
-            </div>
+	   </div>
         </div>
     
         <div id="page_footer">
             <div class="parsys iparsys footeripar"><div class="iparys_inherited"><div class="parsys iparsys footeripar"><div class="section"><div class="footer">
- 
-  
-
- 
-
  
    
 <style>
@@ -493,53 +575,6 @@ padding:0px;
 
 <div id="page_footer_rule" style="border-color: #FFFFFF;"></div>
 
-<!-- <table border="0" cellpadding="0" cellspacing="0">
-    <tr>
-    
-        <td align="left" valign="middle" class="bigger_and_bolder">
- 
-                <div style="float:left;">
-            <a href="#" onclick="javascript:;" title="">
-                    <img align="absmiddle" src="/content/dam/Canada/en/global/twitter.png" alt=""/><span style="margin-left:3px;">Follow</span>
-              </a> 
-           </div>     
-                      <div style="float:left; margin-left:8px;">
-            <a class="external" href="#" onclick="javascript:;" title="">
-                    <img align="absmiddle" src="/content/dam/Canada/en/global/facebook.png" alt=""/><span style="margin-left:3px;">Like</span>
-              </a> 
-           </div>     
-
-           
-        
-                </td>
-            
-        <td align="right" valign="right" class="not_bigger_but_bolder" >
-
-      <a href="/ca/en/our_story/corporate_info.html">Corporate Info</a>
-      
-           <span>|</span> 
-
-      <a href="/ca/en/our_story/corporate_info/press_room.html">Press Room</a>
-      
-           <span>|</span> 
-
-      <a href="/ca/en/help.html">Help</a>
-      
-           <span>|</span> 
-
-      <a href="/ca/en/privacy.html">Privacy</a>
-      
-           <span>|</span> 
-
-      <a href="/ca/en/terms_conditions.html">Terms & Conditions</a>
-        
-  
-     <span>|</span>                 
-     <span style="color:#;font-size:px;"> &copy;2010-2013&nbsp;&nbsp;McDonald's</span>
-       
-       </td>
-    </tr>
-</table> -->
         </div>
 </div></div>
 </div><div class="section"><div class="new"></div>
@@ -549,20 +584,6 @@ padding:0px;
         </div>
     </div>
 
-<!--
-<script type="text/javascript"> 
-    $(function(){
-        var height = $('#page_narrow_hero').height();
-        //alert("hero height::"+height);
-        if(height<600)
-        {
-            var contentHeight = (600-height).toString() + "px";
-            //alert("content height::"+contentHeight);
-            $('#content_section').css("min-height",contentHeight);
-        }
-    });
-</script>
--->
 
     </div>
     

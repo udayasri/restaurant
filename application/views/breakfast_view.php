@@ -326,6 +326,12 @@ function _utf8_encode(string) {
 	   	echo '<div class="parbase search"> ';
 		echo '<a href="'.base_url().'userlogin/log_out" class="last">Logout</a>';         
 		echo '</div></div>';
+		
+		echo '<div id="searchxcv" style="float:right">';
+   		echo '<div class="parbase "> ';
+   		echo '<a href="'.base_url().'shoppingcart" class="last">Shoppingcart</a>';
+   		echo '</div></div>';
+		
         ?>
 <div id="language">
     <div class="siteToggler">
@@ -342,6 +348,11 @@ function _utf8_encode(string) {
 		echo '<div id="search">';
    		echo '<div class="parbase search"> ';
    		echo '<a href="'.base_url().'userlogin" class="last">Login</a>';
+   		echo '</div></div>';
+		
+		echo '<div id="searchxcv" style="float:right">';
+   		echo '<div class="parbase "> ';
+   		echo '<a href="'.base_url().'shoppingcart" class="last">Shoppingcart</a>';
    		echo '</div></div>';
 	}
 
@@ -419,16 +430,18 @@ vertical-align:top;
 						echo '</tr><tr>';
 					}
 			  		echo '<td width="134">';
-					echo '<div style = "height:150px">';
+					echo '<div style = "height:160px">';
 			  		echo '<img src = "'.base_url().'assets/img/foods/'.$row->food_image.'">';
 					echo '<p style="text-align:center"><span class="rtStyle_image_title">';
-					echo $row->food_name; 	
+					echo $row->food_name; echo '</br>'; echo $row->food_price."$";
 					echo '</span>';
 					echo '</p>';
+					
 					echo '</div>';
+					
 					//echo '<a href="'.base_url().'shoppingcart/" class="button btn-cart color1" title="Edit Food" id = "#">Add to Cart</a>';
-					//echo '<button type="button" title="Add to Cart" class="button btn-cart color1" onclick="javascript:window.location.replace('."'".base_url()."shoppingcart/addorder/".$row->food_id."'".')"><span><span>Add to Cart</span></span></button>';
-					echo '<button type="button" title="Add to Cart" class="button btn-cart color1" onclick="javascript:window.location.replace('."'".base_url()."shoppingcart'".')"><span><span>Add to Cart</span></span></button>'; ?>
+					echo '<button type="button" title="Add to Cart" class="button btn-cart color1" onclick="javascript:window.location.replace('."'".base_url()."breakfast/addtocart/".$row->food_id."'".')"><span><span>Add to Cart</span></span></button>';
+					//echo '<button type="button" title="Add to Cart" class="button btn-cart color1" onclick="javascript:window.location.replace('."'".base_url()."shoppingcart'".')"><span><span>Add to Cart</span></span></button>'; ?>
 					
 					<?php echo '</td>';
 					

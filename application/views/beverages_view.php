@@ -298,7 +298,7 @@ function _utf8_encode(string) {
 
             </div>
         
-        <div id="notification">
+       
        
          
             <div id="search">
@@ -326,6 +326,12 @@ function _utf8_encode(string) {
 	   	echo '<div class="parbase search"> ';
 		echo '<a href="'.base_url().'userlogin/log_out" class="last">Logout</a>';         
 		echo '</div></div>';
+		
+		echo '<div id="searchxcv" style="float:right">';
+   		echo '<div class="parbase "> ';
+   		echo '<a href="'.base_url().'shoppingcart" class="last">Shoppingcart</a>';
+   		echo '</div></div>';
+		
         ?>
 <div id="language">
     <div class="siteToggler">
@@ -343,7 +349,15 @@ function _utf8_encode(string) {
    		echo '<div class="parbase search"> ';
    		echo '<a href="'.base_url().'userlogin" class="last">Login</a>';
    		echo '</div></div>';
+		
+		echo '<div id="searchxcv" style="float:right">';
+   		echo '<div class="parbase "> ';
+   		echo '<a href="'.base_url().'shoppingcart" class="last">Shoppingcart</a>';
+   		echo '</div></div>';
+		
+		
 	}
+	
 
 ?>
 
@@ -351,7 +365,7 @@ function _utf8_encode(string) {
 		
 	</div>
       
-   		</div>
+   
    
         </div>
         
@@ -419,10 +433,10 @@ vertical-align:top;
 						echo '</tr><tr>';
 					}
 			  		echo '<td width="134">';
-					echo '<div style = "height:150px">';
+					echo '<div style = "height:160px">';
 			  		echo '<img src = "'.base_url().'assets/img/foods/'.$row->food_image.'">';
 					echo '<p style="text-align:center"><span class="rtStyle_image_title">';
-					echo $row->food_name; 	
+					echo $row->food_name; echo '</br>'; echo $row->food_price."$";
 					echo '</span>';
 					echo '</p>';
 					echo '</div>';
