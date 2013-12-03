@@ -7,6 +7,7 @@ class Orders extends CI_Controller
 	public function __construct() 
 	{
         parent::__construct();
+		$this->load->model('order_model');
     }
 	
 	// This will load newfood_view
@@ -14,8 +15,6 @@ class Orders extends CI_Controller
 	{
 		if( $this->session->userdata('username') != null )
 		{
-			$this->load->model('order_model');
-		
 			$this->view_data['orderDetails'] = $this->order_model->getOrderDetails();
 			
 			$this->load->view( 'orders_view.php',$this->view_data );
@@ -24,6 +23,20 @@ class Orders extends CI_Controller
 		{
 			redirect('login');
 		}
+	}
+	
+	public function delivered()
+	{
+		if( $this->uri->segment(3) != null )
+			{
+				$params = array( 0 , $this->uri->segment(3) ) ;
+					
+				$query = 'UPDATE orders SET status = ?  WHERE order_id = ? ;';
+				
+				$result = $this->order_model->updateOrders( $query,$params ); 
+				
+				redirect('orders');
+			}
 	}
 	
 }

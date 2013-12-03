@@ -96,12 +96,16 @@
 	                                echo '<td>'; 	echo $row->ordered_by ;		echo '</td>';
 	                                echo '<td>'; 	echo $row->contact; 		echo '</td>';
 	                                echo '<td>'; 	echo $row->items; 			echo '</td>';
-	                                echo '<td>'; 	echo $row->time; 			echo '</td>';
-	                                echo '<td>'; 	echo $row->status; 			echo '</td>';
+	                                echo '<td>'; 	echo $row->ordered_date; 	echo '</td>';
+	                                echo '<td>'; 	echo $row->status == '1' ?  'new' :  'delivered'; echo '</td>';
 	                                echo '<td>';
-	                                        echo '<ul class="table-controls">
-	                                            <li><a href="#" class="tip" title="Delivered"><i class="fam-tick"></i></a> </li>
-	                                            <li><a href="#" class="tip" title="Remove order"><i class="fam-cross"></i></a> </li>
+	                                        echo '<ul class="table-controls">';
+	                                        if( $row->status == '1' )
+	                                        {
+	                                        	 echo '<li><a href="'.base_url().'orders/delivered/'.$row->order_id.'" class="tip" title="Delivered"><i class="fam-tick"></i></a> </li>';
+	                                        }
+	                                      
+	                                         echo '<li><a href="#" class="tip" title="Remove order"><i class="fam-cross"></i></a> </li>
 	                                        </ul>';
 	                                echo  '</td>';
                                 echo '</tr>';
