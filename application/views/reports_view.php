@@ -73,12 +73,152 @@
 		<div class="wrapper">
 		    <h5> </h5>
 		    <br />           
-                <!-- Default datatable -->
-                
-                <!-- /default datatable -->
+               	<!-- Invoice -->
+                <div class="widget">
+					<div class="navbar">
+						<div class="navbar-inner">
+							<h6>Monthly Report</h6>
+							<!-- <button type="button" class="btn btn-success pull-right">Send</button> -->
+							<!-- <button type="button" class="btn btn-danger pull-right">Print</button> -->
+						</div>
+					</div>
+
+			        <div class="well invoice">
+
+		                <div class="invoice-head">
+		                    <a href="index.html" title="invoice" class="invoice-logo"><img src="<?php echo base_url()?>images/1336914409746.png" alt="logo" /></a>
+		                    <ul class="pull-right minus-list invoice-data">
+		                        <li>Report <strong class="text-info pull-right">#1258</strong></li>
+		                        <li>Date <span class="pull-right"><?php echo date("Y-m-d"); ?></span></li>
+		                        <!-- <li>Payment due by: <strong class="pull-right text-error">10/06/2012</strong></li> -->
+		                    </ul>
+		                </div>
+		                
+		                <div class="row-fluid">
+		                    <div class="span6">
+		                    	<div class="invoice-from pull-left">
+		                        <h5>Macdonalds</h5>
+		                        <ul class="plus-list">
+		                        	<li>No : 8</li> 
+		                        	<li>Persiaran Perdana</li> 
+		                        	<li>Kuala Lumpur</li>
+		                        	<li>Malayasia</li>
+		                        	<li>Mobile Phone: <strong class="text-error">+60 3-6274 1559</strong></li>
+		                        	<li>Send To: <a href="#">mac@malayasia.com</a></li>
+		                        </ul>
+			                    </div>
+		                    </div>
+		                    
+		                    <!-- <div class="span6">
+		                    	<div class="invoice-to pull-right">
+			                        <h5>Client Company Name</h5>
+			                        <ul class="plus-list">
+			                        	<li>Client Address Line 2</li>
+			                        	<li>Country</li>
+			                        	<li>Town</li>
+			                        	<li>Region/State</li>
+			                        	<li>Zip/Postal Code</li>
+			                        	<li>Mobile Phone: <strong class="text-error">+4530422244</strong></li>
+			                        	<li>Email: <a href="#">client@company.com</a></li>
+			                        </ul>
+			                    </div>
+		                    </div> -->
+			            </div>
+		                
+		                <table class="table table-striped table-bordered">
+		                    <thead>
+		                        <tr>
+		                            <th>Order Number</th>
+		                            <th>Description</th>
+		                            <th>Order Date</th>
+		                            <th>Total</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody>
+		                   	<?php 
+		                   	
+		                   	$totalamount = 0; 
+                            foreach ( $reportDetails as $row ) 
+						  	{
+						  		$order_code = 1000+$row->report_id;
+								
+						  		echo '<tr>';
+	                                echo '<td>'; 	echo $order_code;			echo '</td>';
+	                                echo '<td>'; 	echo $row->order_description; 			echo '</td>';
+									echo '<td>'; 	echo $row->order_date; 			echo '</td>';
+	                                echo '<td>'; 	echo $row->order_total."$" 		; echo '</td>';
+                                echo '</tr>';
+						  		
+								$totalamount += $row->order_total;
+						  	}
+						  	?>
+		                        <!-- <tr>
+		                            <td>Concept</td>
+		                            <td>Creating project concept and logic</td>
+		                            <td>0</td>
+		                            <td><strong>$1,100</strong></td>
+		                        </tr>
+		                        <tr>
+		                            <td>General design</td>
+		                            <td>Design prototype</td>
+		                            <td>0</td>
+		                            <td><strong>$2,000</strong></td>
+		                        </tr>
+		                        <tr>
+		                            <td>Front end development</td>
+		                            <td>Coding and connecting front end</td>
+		                            <td>0</td>
+		                            <td><strong>$1,600</strong></td>
+		                        </tr>
+		                        <tr>
+		                            <td>Database</td>
+		                            <td>Creating and connecting database</td>
+		                            <td>0</td>
+		                            <td><strong>$890</strong></td>
+		                        </tr> -->
+		                    </tbody>
+		                </table>
+		                
+		                <div class="row-fluid">
+		                    <div class="span6">
+		                    	<div class="invoice-from pull-left">
+			                        <!-- <h5>Payment method: <i class="text-error">Wire transfer</i></h5>
+			                        <ul class="plus-list">
+			                        	<li>Bank account #</li>
+			                        	<li>SWIFT code</li>
+			                        	<li>IBAN</li>
+			                        	<li>Billing address</li>
+			                        	<li>Name</li>
+			                        </ul> -->
+			                    </div>
+		                    </div>
+		                
+		                    <div class="span6">
+		                    	<div class="total pull-right">
+			                        <span>Total Amount</span>
+			                        <strong class="text-error"><?php echo $totalamount; ?>$</strong>
+		                        </div>
+		                    </div>
+		                </div>
+		                
+		                <div class="invoice-footer">
+		                    <span class="footer-note">© 2013 Macdonals Corporation. All rights reserved.</span>
+		                    <!-- <ul class="cards">
+		                        <li class="discover"></li>
+		                         <li class="visa"></li>
+		                         <li class="mc"></li>
+		                         <li class="pp"></li>
+		                         <li class="amex"></li>
+		                    </ul> -->
+		                </div>
+
+			        </div>
+
+                </div>
+                <!-- /invoice -->
                 
            </div>  
-           </div>   
+   </div>   
 	</div>
 
 	<!-- Footer -->

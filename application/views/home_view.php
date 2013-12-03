@@ -358,41 +358,41 @@ padding:0px;
             <tr valign="top">
 				<td width="290" valign="top">
 				<h1>Menu</h1>
-				<p><a href="/ca/en/menu/full_menu/mccafe.html">McCafe<sup></sup></a><img src="images/small_carrot.png" align="absmiddle"><br>
+				<p><a href="">McCafe<sup></sup></a><img src="images/small_carrot.png" align="absmiddle"><br>
 				<span style="color:#838383">Discover the rich, bold flavour.</span>
 				</p>
-				<p><a href="/ca/en/menu/full_menu/value_picks.html">Value Picks<sup></sup></a><img src="images/small_carrot.png" align="absmiddle"><br>
+				<p><a href="">Value Picks<sup></sup></a><img src="images/small_carrot.png" align="absmiddle"><br>
 				<span style="color:#838383">Turn your change into something tasty.</span>
 				</p>
-				<p><a href="/ca/en/menu/full_menu/sandwiches.html">Burgers, Sandwiches, & Wraps</a><img src="images/small_carrot.png" align="absmiddle"><br>
+				<p><a href="">Burgers, Sandwiches, & Wraps</a><img src="images/small_carrot.png" align="absmiddle"><br>
 				<span style="color:#838383">You know you want one.</span>
 				</p>
-				<p><a href="/ca/en/menu/full_menu/chicken.html">Chicken</a><img src="images/small_carrot.png" align="absmiddle"><br>
+				<p><a href="">Chicken</a><img src="images/small_carrot.png" align="absmiddle"><br>
 				<span style="color:#838383">Juicy, tender and irresistible.</span>
 				</p>
-				<p><a href="/ca/en/menu/full_menu/breakfast.html">Breakfast</a><img src="images/small_carrot.png" align="absmiddle"><br>
+				<p><a href="">Breakfast</a><img src="images/small_carrot.png" align="absmiddle"><br>
 				<span style="color:#838383">Love every morning.</span>
 				</p>
 				</td>
 				                <td width="290" valign="top">
 				<h1>&nbsp;</h1>
-				<p><a href="/ca/en/menu/full_menu/salads.html">Salads</a><img src="images/small_carrot.png" align="absmiddle"><br>
+				<p><a href="">Salads</a><img src="images/small_carrot.png" align="absmiddle"><br>
 				<span style="color:#838383">Fresh, yummy freedom in a bowl.</span>
 				</p>
-				<p><a href="/ca/en/menu/full_menu/snacks.html">Snacks & Sides</a><img src="images/small_carrot.png" align="absmiddle"><br>
+				<p><a href="">Snacks & Sides</a><img src="images/small_carrot.png" align="absmiddle"><br>
 				<span style="color:#838383">Delight your taste buds, any time.</span>
 				</p>
-				<p><a href="/ca/en/menu/full_menu/beverages.html">Beverages</a><img src="images/small_carrot.png" align="absmiddle"><br>
+				<p><a href="">Beverages</a><img src="images/small_carrot.png" align="absmiddle"><br>
 				<span style="color:#838383">Refreshing companions.</span>
 				</p>
-				<p><a href="/ca/en/menu/full_menu/desserts_shakes.html">Desserts & Shakes</a><img src="images/small_carrot.png" align="absmiddle"><br>
+				<p><a href="">Desserts & Shakes</a><img src="images/small_carrot.png" align="absmiddle"><br>
 				<span style="color:#838383">Celebrate the sweet life.</span>
 				</p>
 				                </td>
 				                <td width="200" valign="top">
 				<h1>Meal Bundles</h1>
-				<p><a href="/ca/en/menu/meal_bundles/extra_value_meals.html">Extra Value Meals</a><img src="images/small_carrot.png" align="absmiddle"><br><span style="color:#838383">Treat yourself to tasty deals.</span></p>
-				<p><a href="/ca/en/menu/meal_bundles/happy_meal.html">Happy Meal</a><img src="images/small_carrot.png" align="absmiddle"><br><span style="color:#838383"> You want the very best for your kids, and so do we!</span></p>              
+				<p><a href="">Extra Value Meals</a><img src="images/small_carrot.png" align="absmiddle"><br><span style="color:#838383">Treat yourself to tasty deals.</span></p>
+				<p><a href="">Happy Meal</a><img src="images/small_carrot.png" align="absmiddle"><br><span style="color:#838383"> You want the very best for your kids, and so do we!</span></p>              
                 </td>                
             </tr>
         </table>

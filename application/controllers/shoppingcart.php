@@ -116,6 +116,13 @@ class Shoppingcart extends CI_Controller
 					
 					$result = $this->shoppingcart_model->insertorder( $query, $params );
 					
+					$params2 = array( $items, $order_date, $total );
+					
+					$query2 = 'INSERT INTO report ( order_description, order_date, order_total ) 
+					VALUES( ?,?,? )';
+					
+					$result = $this->shoppingcart_model->insertorder( $query2, $params2 );
+					
 					redirect('ordersuccess');
 			}
 			

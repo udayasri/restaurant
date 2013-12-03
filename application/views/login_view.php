@@ -77,7 +77,7 @@
                     <div class="controls"><label class="checkbox inline"><input type="checkbox" name="checkbox1" class="styled" value="" checked="checked">Remember me</label></div>
                 </div> -->
 
-                <div class="login-btn"><input type="submit" value="Log me in" class="btn btn-danger btn-block" id="login_submit" name="login_submit"/></div>
+                <div class="login-btn"><input type="button" value="Log me in" class="btn btn-danger btn-block" id="login_submit" name="login_submit"/></div>
 
             </form>
         </div>

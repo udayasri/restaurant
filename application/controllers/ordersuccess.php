@@ -11,7 +11,10 @@ class Ordersuccess extends CI_Controller
 	
 	// This will food menu table page
 	public function index()
-	{	
+	{
+		$this->session->unset_userdata( 'shoppingcart_food_id' );	
 		$this->load->view( 'ordersuccess_view.php' );	
+		
+		
 	}
 }

@@ -394,7 +394,7 @@ padding:0px;
 
     <div style="color:#000;background:#ffffff; margin-top:0px; padding:42px; -moz-border-radius: 0px 0px 10px 10px; -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px; height: 100px">
         
-    	<p>Thank you for placing an order. You'll be contact soon from our staff member</p>
+    	<h3>Thank you for placing an order. You'll be contact soon from our staff member</h3>
  
     </div>
 

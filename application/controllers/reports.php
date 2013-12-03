@@ -8,6 +8,7 @@ class Reports extends CI_Controller
 	{
         parent::__construct();
 		$this->load->model('order_model');
+		$this->load->model('report_model');
     }
 	
 	// This will load newfood_view
@@ -16,6 +17,7 @@ class Reports extends CI_Controller
 		if( $this->session->userdata('username') != null )
 		{
 			 $this->view_data['orderDetails'] = $this->order_model->getOrderDetails();
+			 $this->view_data['reportDetails'] = $this->report_model->getReportDetails();
  			
 			$this->load->view( 'reports_view.php', $this->view_data  );
 		}
