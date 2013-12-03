@@ -1,6 +1,4 @@
-// JavaScript Document for administrator login
 
-//after the user click admin login button
 $('#cust_login').live('click',function()
 {
 	var form_data = {

@@ -17,6 +17,7 @@
 		
 	});
 </script>
+<script src="<?php echo base_url()?>assets/js/ajax_update_shoppingcart.js"></script>
 
 <style>
 	.CSSTableGenerator {
@@ -471,7 +472,8 @@ padding:0px;
 
     <div style="color:#000;background:#ffffff; margin-top:0px; padding:42px; -moz-border-radius: 0px 0px 10px 10px; -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px; height: auto">
       <h2>Shopping Cart </h2>
-     <?php echo form_open('login/login_validate');?>   
+     <?php $attributes = array('id' => 'shopping_cart_update');?>
+     <?php echo form_open('login/login_validate' , $attributes );?>   
        <div class="CSSTableGenerator" style="margin-bottom: 20px"> 
 		<table width="100%%" border="1" style="color: #000">
 		  <tr>
@@ -488,22 +490,25 @@ padding:0px;
 				{
 					echo '<tr>';
 				    echo '<td>'; echo $list[$i][$j]->food_name; echo '</div></td>';
-					echo '<td>  <div contenteditable id ="food_quntity'.$i.'">'; echo '1'; ; echo '</div></td>';
+					echo '<td>  <div contenteditable id ="food_quntity'.$i.'" class = "food_quntitychange">'; echo '1'; ; echo '</div></td>';
 					echo '<td>'; echo '<div id ="food_price'.$i.'">'. $list[$i][$j]->food_price. '</div>'; echo '</td>';
-					echo '<td>';?> <a href="<?php base_url();?>"><img src="<?php echo base_url()?>assets/img/delete.png" style="float:left; margin-top:9px; margin-right:9px; cursor:pointer" id="x" class="delete_image del"/></a> <?php echo '</td>';
+					echo '<td> <a href="'.base_url().'shoppingcart/removefood/'.$list[$i][$j]->food_id.'"><img src="'. base_url().'assets/img/delete.png" style="float:left; margin-top:9px; margin-right:9px; cursor:pointer" id="x" class="delete_image del"/></a> </td>';
 				  	echo '</tr>';
+					
+					echo '<input type="hidden" name="food_priceamount1'.$i.'" id="food_priceamount1'.$i.'" value="'.$list[$i][$j]->food_price.'">'; //set the value of price of 1 food item 
 					
 					$total +=  $list[$i][$j]->food_price;
 					
 				}
 			}
+			echo '<input type="hidden" name="count" id="count" value="'.$i.'">';
 			
 	        
 	        ?>
 		  
 		    <td>Total</td>
 		    <td>&nbsp;</td>
-		    <td><?php echo $total ; ?></td>
+		    <td><?php echo '<div id = "total">'; echo $total ; echo '</div>' ; ?></td>
 		    <td>&nbsp; </td>
 		  </tr>
 		</table>
@@ -511,7 +516,8 @@ padding:0px;
  
         <div style="float:left; width: 100%">
         	<button type="submit" name="cust_login" id="cust_login" style="margin-right: 36px; width: 80px">Order </button>
-        	<a href="<?php echo base_url()?>userregister"><button type="button" id="register" style="width: 160px" >Continue Shopping </button></a>
+        	<!-- <button type="button" name="updateshoppingcart" id="updateshoppingcart" style="margin-right: 36px; width: 80px">Update </button> -->
+        	<a href="<?php echo base_url()?>breakfast"><button type="button" id="register" style="width: 160px" >Continue Shopping </button></a>
         </div>
     </div>
 

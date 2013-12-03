@@ -34,17 +34,26 @@ class Shoppingcart extends CI_Controller
 		
 	}
 	
-	public function addorder()
+	public function updatecart()
 	{
-		// if( $this->uri->segment(3) != null )
-			// {
-				//$this->view_data['foodDetails'] = $this->foodmenu_model->getEditFoodDetails( $this->uri->segment(3) );
-				//$this->load->view( 'shoppingcart_view.php' );
-			// }
-			// else
-			// {
-				// redirect('home');
-			// }
+		
+	}
+	
+	public function removefood()
+	{
+		if( $this->uri->segment(3) != null )
+		{
+			$id =  $this->uri->segment(3);
+			
+			$filter = $this->session->userdata( 'shoppingcart_food_id' );
+			$index = array_search($id, $filter);
+			unset($filter[$index]);
+			$this->session->set_userdata( 'shoppingcart_food_id', $filter );
+			
+			redirect("shoppingcart");
+			
+		}
+		
 	}
 	
 }

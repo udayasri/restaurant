@@ -447,67 +447,10 @@ vertical-align:top;
 			  	}
 			?>
 						  		
-			<!-- <td width="134"><img src="images/thumb_egg-mcmuffin.png" border="0"/>
-				<p style="text-align:center"><span class="rtStyle_image_title">Egg McMuffin</span></p>
-			</td>
-			<td width="134"><a href="/ca/en/menu/full_menu/breakfast/sausage_mcmuffin_with_egg.html"><img src="images/breakfast/thumb_sausage-mcmuffin-egg.png" border="0"/></a>
-				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/sausage_mcmuffin_with_egg.html">Sausage McMuffin<sup>®</sup> with Egg</a></span></p>
-			</td>
-			<td width="134"><a href="/ca/en/menu/full_menu/breakfast/bacon_n_egg_mcmuffin.html"><img src="images/thumb_bacon-egg-mcmuffin.png" border="0"/></a>
-				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/bacon_n_egg_mcmuffin.html">Bacon 'n Egg McMuffin<sup>®</sup></a></span></p>
-			</td>
-			<td width="134"><a href="/ca/en/menu/full_menu/breakfast/sausage_mcmuffin.html"><img src="images/thumb_sausage-mcmuffin.png" border="0"/></a>
-				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/sausage_mcmuffin.html">Sausage McMuffin<sup>®</sup></a></span></p>
-			</td>
-<td width="134"><a href="/ca/en/menu/full_menu/breakfast/bacon_egg_cheese_mcgriddles.html"><img src="images/thumb_bacon-egg-cheese-mc-griddles.png" border="0"/></a>
-				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/bacon_egg_cheese_mcgriddles.html">Bacon Egg & Cheese McGriddles<sup>®</sup></a></span></p>
-			</td>
-                        <td width="134"><a href="/ca/en/menu/full_menu/breakfast/bec_bagel.html"><img src="images/thumb_bacon-egg-bagel-multi.png" border="0"/></a>
-				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/bec_bagel.html">Bacon 'N Egg Bagel</a></span></p>
-			</td> -->
+
 		</tr>
 		
-		<!-- row 2 -->
-		<!-- <tr>
-			
-<td width="134"><a href="/ca/en/menu/full_menu/breakfast/bagel_blt.html"><img src="images/thumb_blt-bagel-multi.png" border="0"/></a>
-				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/bagel_blt.html">BLT Bagel</a></span></p>
-			</td>
-<td width="134"><a href="/ca/en/menu/full_menu/breakfast/egg_lt_bagel.html"><img src="images/thumb_lt-egg-bagel-multi.png" border="0"/></a>
-				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/egg_lt_bagel.html">Egg LT Bagel</a></span></p>
-			</td>
-<td width="134"><a href="/ca/en/menu/full_menu/breakfast/breakfast_burritos.html"><img src="images/thumb_breakfast-burritos.png" border="0"/></a>
-				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/breakfast_burritos.html">Breakfast Burrito</a></span></p>
-			</td>
-<td width="134"><a href="/ca/en/menu/full_menu/breakfast/hash_browns.html"><img src="images/thumb_hash-browns.png" border="0"/></a>
-				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/hash_browns.html">Hash Browns</a></span></p>
-			</td>
-			<td width="134" style="padding-top:4px"><a href="/ca/en/menu/full_menu/snacks/baked_muffins.html"><img src="images/thumb_baked-muffins.png" border="0"/></a>
-				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/snacks/baked_muffins.html">Baked Muffins </a></span></p>
-			</td>
-<td width="134"><a href="/ca/en/menu/full_menu/breakfast/big_breakfast.html"><img src="images/thumb_big-breakfast.png" border="0"/></a>
-				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/big_breakfast.html">Big Breakfast<sup>®*</sup></a></span></p>
-			</td>
-			
-		</tr> -->
-		<!-- row 3 -->
-		<!-- <tr>
-                
-			
-			
-			
-			<td width="134"><a href="/ca/en/menu/full_menu/breakfast/hotcakes_and_sausage.html"><img src="images/thumb_hotcakes-sausage.png" border="0"/></a>
-				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/hotcakes_and_sausage.html">Hotcakes and Sausage</a></span></p>
-			</td>
-<td width="134"><a href="/ca/en/menu/full_menu/breakfast/oatmeal.html"><img src="images/thumb_oatmeal.png" border="0"/></a>
-				<p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/breakfast/oatmeal.html">Oatmeal</a></span></p>
-			</td>
-<td width="134">
-                   <a href="/ca/en/menu/full_menu/snacks/fruit_n_yogurt_parfait.html"><img src="images/thumb_parfait.png"/></a>
-                    <p style="text-align:center"><span class="rtStyle_image_title"><a href="/ca/en/menu/full_menu/snacks/fruit_n_yogurt_parfait.html">Fruit N Yogurt Parfait</a></span></p>
-                </td>
-               </tr> -->
-               <!-- row 4 -->
+		
 		<tr>
                        
 			<td width="134">
