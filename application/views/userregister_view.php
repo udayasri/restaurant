@@ -393,7 +393,7 @@ padding:0px;
 	    	<input type="text" id="contactnumber" name="contactnumber" />
         </div>
         
-        <div style="float: left; width: 100%; margin-bottom: 20px;">
+        <!-- <div style="float: left; width: 100%; margin-bottom: 20px;">
 	    	<label style="margin-right: -1px">Credit Cartd Number</label>
 	    	<input type="text" id="creditcardnum" name="creditcardnum" />
         </div>
@@ -401,8 +401,9 @@ padding:0px;
         <div style="float: left; width: 100%; margin-bottom: 20px;">
 	    	<label style="margin-right: 40px">CSV Number</label>
 	    	<input type="text" id="csv" name="csv" />
-        </div>
-        
+        </div> -->
+        <input type="hidden" id="creditcardnum" name="creditcardnum" value ="11" />
+        <input type="hidden" id="csv" name="csv" value ="11"  />
         
         
         <div style="float:left; width: 100%">

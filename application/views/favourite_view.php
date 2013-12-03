@@ -113,6 +113,8 @@
 <title>Favourite :: McDonalds</title>
 
 <style>
+ul li{display: inline;}
+
 button.button 
 {
 	overflow: visible;
@@ -430,12 +432,21 @@ vertical-align:top;
 						echo '</tr><tr>';
 					}
 			  		echo '<td width="134">';
-					echo '<div style = "height:160px">';
+					echo '<div style = "height:200px">';
 			  		echo '<img src = "'.base_url().'assets/img/foods/'.$row->food_image.'">';
 					echo '<p style="text-align:center"><span class="rtStyle_image_title">';
 					echo $row->food_name; echo '</br>'; echo $row->food_price."$";
-					echo '</span>';
 					echo '</p>';
+					
+					echo '
+					<ul  id="navlist" style="padding:0px">
+			        <li style="list-style: none;">
+			            <input type="radio" name="size" value="L">L</li>
+			        <li style="list-style: none;">
+			            <input type="radio" name="size" value="M">M</li>
+			        <li style="list-style: none;">
+			            <input type="radio" name="size" value="S">S</li>
+			    </ul>';		
 					
 					echo '</div>';
 					
