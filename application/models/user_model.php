@@ -6,9 +6,7 @@ class User_model extends CI_Model {
 	{
 		parent:: __construct();
 	}
-	
-##################################################################################################################################
-//check username and password
+
 
 	function veryfy_user($username, $password)
 	{
@@ -52,20 +50,42 @@ class User_model extends CI_Model {
 	
 	}
 	
-	function user_register( $username, $firstname, $lastname, $email, $password){
+	function user_register( $username, $firstname, $lastname, $email,$contactnumber ,$creditcardnum ,$csv , $password)
+	{
 		
-	$data = array(
-			'username' => $username,
-			'password' => $password,
-			'firstname'=>$firstname,
-			'email'=>$email,
-			'lastname'=>$lastname
-	);
-	
-			$this->db->insert('customers', $data);
-	
-			return true;
+		$data = array(
+				'username' => $username,
+				'password' => $password,
+				'firstname'=>$firstname,
+				'email'=>$email,
+				'lastname'=>$lastname,
+				'contactnumber'=>$contactnumber,
+				'creditcardnum'=>$creditcardnum,
+				'csv'=>$csv
+				);
+		
+				$this->db->insert('customers', $data);
+		
+				return true;
 	}
+	
+	
+	public function getCustomerDetails( $name )
+	{
+		$query ="SELECT *
+		FROM  customers 
+		WHERE username = '".$name."'; ";
+		
+		$query_result = $this->db->query( $query );
+		$data = array();
+	  	foreach($query_result->result() as $row){
+	  		$data[] = $row;
+	  	}
+	  	return $data;
+	}
+
+
+
 	
 	
 }

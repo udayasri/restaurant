@@ -7,6 +7,10 @@ $('#user_create').live('click',function()
 					username : $('#username').val(),
 					password : $('#password').val(),
 					email : $('#email').val(),
+					contactnumber : $('#contactnumber').val(),
+					creditcardnum : $('#creditcardnum').val(),
+					csv : $('#csv').val(),
+					
 	                Rest2013_mac : $("input[name=Rest2013_mac]").val()//this is the hide token. this should be included to send the post data to the sysytem
            		};
 		
@@ -50,10 +54,23 @@ $('#user_create').live('click',function()
 							alert(data.firstname);
 							
 						}
-						if(data.emailemail){
+						if(data.email){
 							alert(data.email);
 							
 						}
+						if(data.contactnumber){
+							alert(data.contactnumber);
+							
+						}
+						if(data.creditcardnum){
+							alert(data.creditcardnum);
+							
+						}
+						if(data.csv){
+							alert(data.csv);
+							
+						}
+						
 					}
 				}
 						

@@ -8,6 +8,8 @@ class Shoppingcart extends CI_Controller
 	{
         parent::__construct();
 		$this->load->model('foodmenu_model');
+		$this->load->model('user_model');
+		$this->load->model('shoppingcart_model');
     }
 
 	public function index()
@@ -33,7 +35,6 @@ class Shoppingcart extends CI_Controller
 				}
 				else
 				{
-					echo 'dsfsdfsdfdfsfsd';
 					$this->view_data['list'][$i] = $this->foodmenu_model->getEditFoodDetails( $this->view_data['food_id'][$i] );
 					
 				}
@@ -66,6 +67,64 @@ class Shoppingcart extends CI_Controller
 			
 		}
 		
+	}
+	
+	public function placeorder()
+	{
+		if( $this->session->userdata('customername') != null )
+		{
+			
+			$count = $this->input->post('count');
+			
+			if( $count == 0 )
+			{
+				redirect('home');
+			}
+			else
+			{
+				$userdetails  = $this->user_model->getCustomerDetails( $this->session->userdata('customername') ); 
+				
+				foreach( $userdetails as $row )
+				{
+					$customername = $row->firstname." ".$row->lastname ;
+					$contactnumber = $row->contactnumber;
+				}
+
+				$items = null;
+				$foodname = null ;
+				$foodprice = 0;
+				$foodquantity = 0;
+				$total = 0;
+				
+				
+				for( $i=0; $i<$count; $i++ )
+				{
+					$foodname = $this->input->post('food_nametopass'.$i);
+					$foodprice = $this->input->post('food_pricetopass'.$i);
+					$foodquantity = $this->input->post('food_quntitytopass'.$i);
+					
+					$total += intval( $foodprice );
+					$items = $foodname.$i."-".$foodquantity.$i.",";
+					
+				}
+				$status = 1 ;
+				$order_date = date("y_m_d") ;
+				
+					$params = array( $customername, $contactnumber, $items, $order_date, $status, $total );
+					
+					$query = 'INSERT INTO orders ( ordered_by, contact, items, ordered_date, status , order_price ) 
+					VALUES( ?,?,?,?,?,? )';
+					
+					$result = $this->shoppingcart_model->insertorder( $query, $params );
+					
+					redirect('ordersuccess');
+			}
+			
+		}
+		else
+		{
+			redirect('userlogin');
+		}
 	}
 	
 }

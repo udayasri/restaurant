@@ -1,5 +1,4 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
 <head> 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"> 
 <meta name="title" content="Menu :: McDonalds.ca" />
@@ -10,132 +9,49 @@
 <META name="_language" content="" />
 <META name="_breadcrumb" content="/ca/en/menu" />
 
-<?php include 'frontend_header.php'?>
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url();?>assets/css/mcdonalds.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="<?php echo base_url();?>assets/css/print.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url();?>assets/css/food.css"/>    
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url();?>assets/css/news.css"/>  
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url();?>assets/css/contactus.css"/>
+<!--<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url();?>assets/css/jquery.ui.theme.css"/>   -->
+<!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url();?>assets/css/ie7.css" />
+<![endif]-->
+<!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url();?>assets/css/ie6.css" />
+<![endif]-->
 
-<script>
-	$(".paytax,.payship").live("keyup", function() {
-		
-	});
-</script>
-<script src="<?php echo base_url()?>assets/js/ajax_update_shoppingcart.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-1.3.2.min.js"></script> 
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.activetextinput.js"></script>
+<!--<script type="text/javascript" src="<?php echo base_url();?>assets/js/global_utils.js"></script>-->
+<link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url();?>assets/css/jquery.mcdcolorbox.css"/>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.colorbox-mod.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.mcdcolorbox.js?p=0"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.callouts.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-ui-1.7.2.custom.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.ifixpng.js"></script>    
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/commons.js"></script> 
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/datepicker.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/custom-form-elements.js"></script>  
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/textArea.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/formValidation.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/page-grayed-out.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/textresize.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/news.js"></script>  
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery_newsarticles.js"></script>  
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/DD_roundies_0.0.2a-min.js"></script>   
 
-<style>
-	.everythingtable{
-		height: 0;
-	}
-	/*.CSSTableGenerator tr { line-height: 14px; }*/
-	
-	.CSSTableGenerator {
-		margin:0px;padding:0px;
-		width:100%;
-		box-shadow: 10px 10px 5px #888888;
-		border:1px solid #000000;
-		
-		-moz-border-radius-bottomleft:0px;
-		-webkit-border-bottom-left-radius:0px;
-		border-bottom-left-radius:0px;
-		
-		-moz-border-radius-bottomright:0px;
-		-webkit-border-bottom-right-radius:0px;
-		border-bottom-right-radius:0px;
-		
-		-moz-border-radius-topright:0px;
-		-webkit-border-top-right-radius:0px;
-		border-top-right-radius:0px;
-		
-		-moz-border-radius-topleft:0px;
-		-webkit-border-top-left-radius:0px;
-		border-top-left-radius:0px;
-	}.CSSTableGenerator table{
-	    border-collapse: collapse;
-	        border-spacing: 0;
-		width:100%;
-		
-		margin:0px;padding:0px;
-	}.CSSTableGenerator tr:last-child td:last-child {
-		-moz-border-radius-bottomright:0px;
-		-webkit-border-bottom-right-radius:0px;
-		border-bottom-right-radius:0px;
-	}
-	.CSSTableGenerator table tr:first-child td:first-child {
-		-moz-border-radius-topleft:0px;
-		-webkit-border-top-left-radius:0px;
-		border-top-left-radius:0px;
-	}
-	.CSSTableGenerator table tr:first-child td:last-child {
-		-moz-border-radius-topright:0px;
-		-webkit-border-top-right-radius:0px;
-		border-top-right-radius:0px;
-	}.CSSTableGenerator tr:last-child td:first-child{
-		-moz-border-radius-bottomleft:0px;
-		-webkit-border-bottom-left-radius:0px;
-		border-bottom-left-radius:0px;
-	}.CSSTableGenerator tr:hover td{
-		
-	}
-	.CSSTableGenerator tr:nth-child(odd){ background-color:#ffffff; }
-	.CSSTableGenerator tr:nth-child(even)    { background-color:#ffffff; }.CSSTableGenerator td{
-		vertical-align:middle;
-		
-		
-		border:1px solid #000000;
-		border-width:0px 1px 1px 0px;
-		text-align:left;
-		padding:7px;
-		font-size:13px;
-		font-family:Arial;
-		font-weight:normal;
-		color:#000000;
-	}.CSSTableGenerator tr:last-child td{
-		border-width:0px 1px 0px 0px;
-	}.CSSTableGenerator tr td:last-child{
-		border-width:0px 0px 1px 0px;
-	}.CSSTableGenerator tr:last-child td:last-child{
-		border-width:0px 0px 0px 0px;
-	}
-	.CSSTableGenerator tr:first-child td{
-			background:-o-linear-gradient(bottom, #ff0000 5%, #bc3200 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff0000), color-stop(1, #bc3200) );
-		background:-moz-linear-gradient( center top, #ff0000 5%, #bc3200 100% );
-		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000", endColorstr="#bc3200");	background: -o-linear-gradient(top,#ff0000,bc3200);
-	
-		background-color:#ff0000;
-		border:0px solid #000000;
-		text-align:center;
-		border-width:0px 0px 1px 1px;
-		font-size:14px;
-		font-family:Arial;
-		font-weight:bold;
-		color:#ffffff;
-	}
-	.CSSTableGenerator tr:first-child:hover td{
-		background:-o-linear-gradient(bottom, #ff0000 5%, #bc3200 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff0000), color-stop(1, #bc3200) );
-		background:-moz-linear-gradient( center top, #ff0000 5%, #bc3200 100% );
-		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000", endColorstr="#bc3200");	background: -o-linear-gradient(top,#ff0000,bc3200);
-	
-		background-color:#ff0000;
-	}
-	.CSSTableGenerator tr:first-child td:first-child{
-		border-width:0px 0px 1px 0px;
-	}
-	.CSSTableGenerator tr:first-child td:last-child{
-		border-width:0px 0px 1px 1px;
-	}
-	
-	textarea:focus, input:focus{
-    	outline: 0;
-	}
-	input
-	{
-		outline:none;
-	}
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/swfobject.js"></script>
 
-</style>
+<script src="<?php echo base_url();?>assets/js/ajax_customer_login.js"></script>
+
 <script>
 	var baseurl =  "<?php echo base_url() ?>";
 </script>
 
 
-<title>Shopping Cart :: McDonalds</title>
+<title>User Login :: McDonalds</title>
 
      
 
@@ -286,10 +202,10 @@ function _utf8_encode(string) {
 
         </div> 
         
-            <div id="breadcrumb">
+             <div id="breadcrumb">
                 <div class="mcdonaldsbreadcrumb breadcrumb">
 		        	<div class="breadCrumb"> 
-						<a href='<?php echo base_url()?>home'>Menu</a>&nbsp;<span class='bd_separator'>/</span>&nbsp;<a href='<?php echo base_url()?>shoppingcart' class='last'>Shopping Cart</a>      
+						<a href='<?php echo base_url()?>home'>Menu</a>&nbsp;<span class='bd_separator'>/</span>&nbsp;<a href='<?php echo base_url()?>breakfast' class='last'>Breakfast</a>      
 		        	</div>      
 		       </div>
 
@@ -364,6 +280,7 @@ function _utf8_encode(string) {
         </div>
         
     </div>
+     
  
   
     <div id="page_wrapper">
@@ -475,70 +392,24 @@ padding:0px;
 
 </style>
 
-    <div style="color:#000;background:#ffffff; margin-top:0px; padding:42px; -moz-border-radius: 0px 0px 10px 10px; -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px; height: auto">
-      <h2>Shopping Cart </h2>
-     <?php $attributes = array('id' => 'shopping_cart_update');?>
-     <?php echo form_open('shoppingcart/placeorder' , $attributes );?>   
-       <div class="CSSTableGenerator" style="margin-bottom: 20px"> 
-		<table width="100%%" border="1" style="color: #000">
-		  <tr>
-		    <td>Food Item</td>
-		    <td>Quantity</td>
-		    <td>Price </td>
-		    <td>Remove</td>
-		  </tr>
-		  <?php //print_r( $list ); 
-        	$total = 0 ;
-	        for($i =0; $i<count( $list );$i++)
-	        {
-				for($j = 0 ; $j<count($list[$i]);$j++)
-				{
-					echo '<tr>';
-				    echo '<td>'; echo $list[$i][$j]->food_name; echo '</div></td>';
-					echo '<td>  <div contenteditable id ="food_quntity'.$i.'" class = "food_quntitychange">'; echo '1'; ; echo '</div></td>';
-					echo '<td>'; echo '<div id ="food_price'.$i.'">'. $list[$i][$j]->food_price. '</div>'; echo '</td>';
-					echo '<td> <a href="'.base_url().'shoppingcart/removefood/'.$list[$i][$j]->food_id.'"><img src="'. base_url().'assets/img/delete.png" style="float:left; margin-top:9px; margin-right:9px; cursor:pointer" id="x" class="delete_image del"/></a> </td>';
-				  	echo '</tr>';
-					echo '<input type="hidden" name="food_priceamount1'.$i.'" id="food_priceamount1'.$i.'" value="'.$list[$i][$j]->food_price.'">'; //set the value of price of 1 food item
-					
-					
-					echo '<input type="hidden" name="food_nametopass'.$i.'" id=food_nametopass'.$i.'" value="'.$list[$i][$j]->food_name.'">';
-					echo '<input type="hidden" name="food_pricetopass'.$i.'" id="food_pricetopass'.$i.'" value="'.$list[$i][$j]->food_price.'">';
-					echo '<input type="hidden" name="food_quntitytopass'.$i.'" id="food_quntitytopass'.$i.'" value="1">';
-					
-					$total +=  $list[$i][$j]->food_price;
-					
-				}
-			}
-			echo '<input type="hidden" name="count" id="count" value="'.$i.'">';
-			
-	        
-	        ?>
-		  
-		    <td>Total</td>
-		    <td>&nbsp;</td>
-		    <td><?php echo '<div id = "total">'; echo $total ; echo '</div>' ; ?></td>
-		    <td>&nbsp; </td>
-		  </tr>
-		</table>
-       </div>
-       
-       <p>*<?php echo $total; ?>$ will be deducted from your account  </p>
+    <div style="color:#000;background:#ffffff; margin-top:0px; padding:42px; -moz-border-radius: 0px 0px 10px 10px; -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px; height: 100px">
+        
+    	<p>Thank you for placing an order. You'll be contact soon from our staff member</p>
  
-        <div style="float:left; width: 100%">
-        	<button type="submit" name="place_order" id="place_order" style="margin-right: 36px; width: 80px">Order </button>
-        	<!-- <button type="button" name="updateshoppingcart" id="updateshoppingcart" style="margin-right: 36px; width: 80px">Update </button> -->
-        	<a href="<?php echo base_url()?>breakfast"><button type="button" id="register" style="width: 160px" >Continue Shopping </button></a>
-        </div>
     </div>
 
       </div>
 </div>
 </div>
-    </div>
 
+        </div>
+        
+        
         <div id="content_section" style="  ">
-
+        
+                
+ 
+  
     <div id="main_content_segment" class="clear">
         <div class="main_content_inner_ko" style="">
             <div class="parsys genericpagecontent"></div>
@@ -550,13 +421,23 @@ padding:0px;
 </div><div class="section"><div class="new"></div>
 </div>
 </div>
+
             </div>
+              
+    
     </div>
-	   </div>
+    
+            
+            </div>
         </div>
     
         <div id="page_footer">
             <div class="parsys iparsys footeripar"><div class="iparys_inherited"><div class="parsys iparsys footeripar"><div class="section"><div class="footer">
+ 
+  
+
+ 
+
  
    
 <style>
@@ -592,6 +473,53 @@ padding:0px;
 
 <div id="page_footer_rule" style="border-color: #FFFFFF;"></div>
 
+<!-- <table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    
+        <td align="left" valign="middle" class="bigger_and_bolder">
+ 
+                <div style="float:left;">
+            <a href="#" onclick="javascript:;" title="">
+                    <img align="absmiddle" src="/content/dam/Canada/en/global/twitter.png" alt=""/><span style="margin-left:3px;">Follow</span>
+              </a> 
+           </div>     
+                      <div style="float:left; margin-left:8px;">
+            <a class="external" href="#" onclick="javascript:;" title="">
+                    <img align="absmiddle" src="/content/dam/Canada/en/global/facebook.png" alt=""/><span style="margin-left:3px;">Like</span>
+              </a> 
+           </div>     
+
+           
+        
+                </td>
+            
+        <td align="right" valign="right" class="not_bigger_but_bolder" >
+
+      <a href="/ca/en/our_story/corporate_info.html">Corporate Info</a>
+      
+           <span>|</span> 
+
+      <a href="/ca/en/our_story/corporate_info/press_room.html">Press Room</a>
+      
+           <span>|</span> 
+
+      <a href="/ca/en/help.html">Help</a>
+      
+           <span>|</span> 
+
+      <a href="/ca/en/privacy.html">Privacy</a>
+      
+           <span>|</span> 
+
+      <a href="/ca/en/terms_conditions.html">Terms & Conditions</a>
+        
+  
+     <span>|</span>                 
+     <span style="color:#;font-size:px;"> &copy;2010-2013&nbsp;&nbsp;McDonald's</span>
+       
+       </td>
+    </tr>
+</table> -->
         </div>
 </div></div>
 </div><div class="section"><div class="new"></div>
@@ -601,6 +529,20 @@ padding:0px;
         </div>
     </div>
 
+<!--
+<script type="text/javascript"> 
+    $(function(){
+        var height = $('#page_narrow_hero').height();
+        //alert("hero height::"+height);
+        if(height<600)
+        {
+            var contentHeight = (600-height).toString() + "px";
+            //alert("content height::"+contentHeight);
+            $('#content_section').css("min-height",contentHeight);
+        }
+    });
+</script>
+-->
 
     </div>
     

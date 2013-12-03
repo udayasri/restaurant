@@ -37,18 +37,19 @@ class Userlogin extends CI_Controller
 			
 			$this->load->model('user_model');
 			$valideuser = $this->user_model->veryfy_user($username,$password);
-			$userinfo = $valideuser->result_array();
-
+			
+			//$userinfo = $valideuser->result_array();
+			
 			if($valideuser == true)
 			{
-				$userinfo = $valideuser->result_array();
+				//$userinfo = $valideuser->result_array();
 			 
-				foreach ($userinfo as $row) 
-				{
-					 $userid = $row['customer_id'];
-					 
-				}
-				$this->session->set_userdata( 'cust_id', $userid );
+				// foreach ($userinfo as $row) 
+				// {
+					 // $userid = $row['customer_id'];
+// 					 
+				// }
+				// $this->session->set_userdata( 'cust_id', $userid );
 				$this->session->set_userdata( 'customername', $username );
 				
 				echo '{"validation_result": "passed"}'; //if user is a valid user send json data to ajax_admin_login.js

@@ -30,6 +30,9 @@ class Userregister extends CI_Controller
 		$this->form_validation->set_rules('username', 'User Name', 'required|xss_clean');
 		$this->form_validation->set_rules('email','Email', 'required|xss_clean');
 		$this->form_validation->set_rules('password',' password ', 'required|xss_clean|email');
+		$this->form_validation->set_rules('contactnumber','Contact Number', 'required|xss_clean|numeric');
+		$this->form_validation->set_rules('creditcardnum','Credit Card Number', 'required|xss_clean|numeric');
+		$this->form_validation->set_rules('csv','CSV', 'required|xss_clean|numeric');
 		
 	
 		if ($this->form_validation->run() == true)
@@ -40,6 +43,10 @@ class Userregister extends CI_Controller
 			$username = $this->input->post('username');
 			$email = $this->input->post('email');
 			$password = $this->input->post('password');
+			$contactnumber = $this->input->post('contactnumber');
+			$creditcardnum = $this->input->post('creditcardnum');
+			$csv = $this->input->post('csv');
+			
 
 				$this->load->model('user_model');
 				$params = array('iterationCount'=>'8', 'portableHashes'=>'false');
@@ -49,7 +56,7 @@ class Userregister extends CI_Controller
 				$valideuser = $this
 				->user_model
 				->user_register(
-						$username,$firstname,$lastname,$email,
+						$username,$firstname,$lastname,$email,$contactnumber,$creditcardnum ,$csv,
 						$this->passwordhash->HashPassword($password)
 					
 				);

@@ -202,12 +202,13 @@ function _utf8_encode(string) {
 
         </div> 
         
-            <div id="breadcrumb">
+             <div id="breadcrumb">
                 <div class="mcdonaldsbreadcrumb breadcrumb">
-		        <div class="breadCrumb">     
-		         <a href='#' class='last'>Menu</a>           
-		        </div>      
+		        	<div class="breadCrumb"> 
+						<a href='<?php echo base_url()?>home'>Menu</a>&nbsp;<span class='bd_separator'>/</span>&nbsp;<a href='<?php echo base_url()?>breakfast' class='last'>Breakfast</a>      
+		        	</div>      
 		       </div>
+
             </div>
         
         <div id="notification">
@@ -215,70 +216,70 @@ function _utf8_encode(string) {
          
             <div id="search">
                <div class="parbase search"> 
- 
-
- 
-  
-   <!--<form name="searchfrm" action="javascript:submitSearch();">
-     Search&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="search" /> 
-   </form> -->
-     <script language="javaScript"> 
-     function submitSearch() {
-         var collection ="canada" ;
-         var searchVal = document.searchfrm.search.value;
-         if (searchVal.trim()==""){ 
-             alert('Please enter a query to search.');
-         }
-         else{
-             var formActionn = "/content/ca/en/search/search_results.html?queryText=" + searchVal.trim() + "&collection="+collection;
-             window.open(formActionn,"_self");  
-         }
-     }
-     </script></div>
-
-           </div>
-        
-        
-            <div id="language">
-                <div class="siteToggler">
- 
-  
-
-<script>
-
-/*function siteToggler(lang,link)
-{    
-    setCookie( 'language', lang, 365, '/', '', '' );
-    window.location = link;
-}*/
-
-function siteToggler(lang,link,redirectSearchResultToSearch)
-{   
-    if((redirectSearchResultToSearch.indexOf('true')!=-1)&&(link.indexOf('/search_results.html')!=-1)){
-        link=link.replace('/search_results.html','.html');
-    } 
-    setCookie( 'mcd_language', lang, 365, '/', '', '' );
-    window.location = link;
-}
-
-
-</script>  
+		     <script language="javaScript"> 
+		     function submitSearch() {
+		         var collection ="canada" ;
+		         var searchVal = document.searchfrm.search.value;
+		         if (searchVal.trim()==""){ 
+		             alert('Please enter a query to search.');
+		         }
+		         else{
+		             var formActionn = "/content/ca/en/search/search_results.html?queryText=" + searchVal.trim() + "&collection="+collection;
+		             window.open(formActionn,"_self");  
+		         }
+		     }
+		     </script></div>
+		     
+<div id="notification">
+       
+ <?php 
+	if( $this->session->userdata('customername') != null )
+	{
+		echo '<div id="search">';
+	   	echo '<div class="parbase search"> ';
+		echo '<a href="'.base_url().'userlogin/log_out" class="last">Logout</a>';         
+		echo '</div></div>';
+		
+		echo '<div id="searchxcv" style="float:right">';
+   		echo '<div class="parbase "> ';
+   		echo '<a href="'.base_url().'shoppingcart" class="last">Shoppingcart</a>';
+   		echo '</div></div>';
+		
+        ?>
+<div id="language">
+    <div class="siteToggler">
+    	<?php 
+    		
+	   		echo $this->session->userdata('customername') ;
+	   		
+    	?> 
 </div> 
-
-	    <div id="breadcrumb">
-	        <div class="mcdonaldsbreadcrumb breadcrumb">
-	          
-	         <a href='<?php echo base_url()?>userlogin' class='last'>Login</a>             
-	       
-	       </div>
-	    </div>
 </div>
+<?php } 
+	else 
+	{
+		echo '<div id="search">';
+   		echo '<div class="parbase search"> ';
+   		echo '<a href="'.base_url().'userlogin" class="last">Login</a>';
+   		echo '</div></div>';
+		
+		echo '<div id="searchxcv" style="float:right">';
+   		echo '<div class="parbase "> ';
+   		echo '<a href="'.base_url().'shoppingcart" class="last">Shoppingcart</a>';
+   		echo '</div></div>';
+	}
 
-              
+?>
+
+</div>
+		
+		           </div>
+      
+   		</div>
+   
         </div>
         
     </div>
-</div>  
      
  
   

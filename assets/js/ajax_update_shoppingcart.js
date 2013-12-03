@@ -12,6 +12,10 @@ $('.food_quntitychange').live('keyup',function()
 		price_id = "#food_priceamount1"+i;
 		updatedprice = "#food_price"+i;
 		
+		//make hidden input feilds ids
+		food_pricetopass = "#food_pricetopass"+i;
+		food_quntitytopass = "#food_quntitytopass"+i;
+		
 
 		foodquntity = $( qunatity_id ).text();
 		foodprice   = $( price_id).val();
@@ -23,6 +27,11 @@ $('.food_quntitychange').live('keyup',function()
 		total += foodpricenew ; 
 		
 		$( "#total" ).text( parseInt(total) );
+		
+		
+		//setting values for teh hidden input feilds
+		$( food_pricetopass ).val( foodpricenew );
+		$( food_quntitytopass ).val( foodquntity );
 		
 	}
 	
