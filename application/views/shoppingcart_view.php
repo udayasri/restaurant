@@ -20,6 +20,11 @@
 <script src="<?php echo base_url()?>assets/js/ajax_update_shoppingcart.js"></script>
 
 <style>
+	.everythingtable{
+		height: 0;
+	}
+	/*.CSSTableGenerator tr { line-height: 14px; }*/
+	
 	.CSSTableGenerator {
 		margin:0px;padding:0px;
 		width:100%;
@@ -45,7 +50,7 @@
 	    border-collapse: collapse;
 	        border-spacing: 0;
 		width:100%;
-		height:100%;
+		
 		margin:0px;padding:0px;
 	}.CSSTableGenerator tr:last-child td:last-child {
 		-moz-border-radius-bottomright:0px;
@@ -77,7 +82,7 @@
 		border-width:0px 1px 1px 0px;
 		text-align:left;
 		padding:7px;
-		font-size:10px;
+		font-size:13px;
 		font-family:Arial;
 		font-weight:normal;
 		color:#000000;

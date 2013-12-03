@@ -12,19 +12,31 @@ class Shoppingcart extends CI_Controller
 
 	public function index()
 	{
-		$this->view_data['food_id'] = $this->session->userdata('shoppingcart_food_id');
-				
-		for( $i =0; $i<count( $this->view_data['food_id'] ); $i++ )
+		$abc = $this->session->userdata('shoppingcart_food_id');
+			
+		if($abc == null)
 		{
-			if( count( $this->view_data['food_id'][$i] ) == 0 )
+			$this->view_data['list'] = NULL; 
+		}
+		else{
+			$this->view_data['food_id'] = $this->session->userdata('shoppingcart_food_id');
+			
+					
+			for( $i =0; $i<count( $this->view_data['food_id'] ); $i++ )
 			{
-				$this->view_data['list'][$i] = NULL;
-		
-			}
-			else
-			{
-				$this->view_data['list'][$i] = $this->foodmenu_model->getEditFoodDetails( $this->view_data['food_id'][$i] );
-				
+				if( count( $this->view_data['food_id'][$i] ) == 0 )
+				{
+					echo 'vfgfdgdfgdfgdfgdfgdfgdfgfdgddd';
+					$this->view_data['list'][$i] = NULL;
+					$this->view_data['list'] = NULL;
+			
+				}
+				else
+				{
+					echo 'dsfsdfsdfdfsfsd';
+					$this->view_data['list'][$i] = $this->foodmenu_model->getEditFoodDetails( $this->view_data['food_id'][$i] );
+					
+				}
 			}
 		}
 		

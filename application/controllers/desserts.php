@@ -17,4 +17,20 @@ class Desserts extends CI_Controller
 			
 			$this->load->view( 'desserts_view.php' , $this->view_data );	
 	}
+	
+		public function addtocart()
+	{
+		//$this->load->view( 'shoppingcart_view.php' );
+		
+		if( $this->uri->segment(3) != null )
+		{
+			$newSession = ($this->session->userdata('shoppingcart_food_id') != '' )? $this->session->userdata('shoppingcart_food_id') : array() ;
+			array_push($newSession, $this->uri->segment(3) );
+			$this->session->set_userdata('shoppingcart_food_id',$newSession);
+			
+			// $this->session->set_userdata('food_id', $this->uri->segment(3) );
+			redirect('shoppingcart');
+		
+		}
+	}
 }

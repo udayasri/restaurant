@@ -32,6 +32,5 @@ class Breakfast extends CI_Controller
 			redirect('shoppingcart');
 		
 		}
-
 	}
 }

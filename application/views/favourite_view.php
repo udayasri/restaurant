@@ -438,8 +438,12 @@ vertical-align:top;
 					echo '</p>';
 					
 					echo '</div>';
-					echo '<button type="button" title="Add to Cart" class="button btn-cart color1" onclick="setLocation('.base_url().'shoppingcart )"><span><span>Add to Cart</span></span></button>';
-					echo '</td>';
+					
+					//echo '<a href="'.base_url().'shoppingcart/" class="button btn-cart color1" title="Edit Food" id = "#">Add to Cart</a>';
+					echo '<button type="button" title="Add to Cart" class="button btn-cart color1" onclick="javascript:window.location.replace('."'".base_url()."breakfast/addtocart/".$row->food_id."'".')"><span><span>Add to Cart</span></span></button>';
+					//echo '<button type="button" title="Add to Cart" class="button btn-cart color1" onclick="javascript:window.location.replace('."'".base_url()."shoppingcart'".')"><span><span>Add to Cart</span></span></button>'; ?>
+					
+					<?php echo '</td>';
 					
 					$i++;
 			  	}
