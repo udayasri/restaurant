@@ -20,18 +20,29 @@ $('.food_quntitychange').live('keyup',function()
 		foodquntity = $( qunatity_id ).text();
 		foodprice   = $( price_id).val();
 		
-		foodpricenew = parseInt( foodquntity )*parseInt( foodprice );
+		if( isNaN( parseInt( foodquntity )/ 1 ) == true)
+		{
+			//alert("ok");
+			$("#place_order").attr("disabled", "disabled");
+		}
+		else
+		{
+			$("#place_order").removeAttr("disabled");  
+			
+			foodpricenew = parseInt( foodquntity )*parseInt( foodprice );
 		
-		foodprice   = $( updatedprice ).text( foodpricenew );
+			foodprice   = $( updatedprice ).text( foodpricenew );
+			
+			total += foodpricenew ; 
+			
+			$( "#total" ).text( parseInt(total) );
+			
+			
+			//setting values for teh hidden input feilds
+			$( food_pricetopass ).val( foodpricenew );
+			$( food_quntitytopass ).val( foodquntity );
+		}
 		
-		total += foodpricenew ; 
-		
-		$( "#total" ).text( parseInt(total) );
-		
-		
-		//setting values for teh hidden input feilds
-		$( food_pricetopass ).val( foodpricenew );
-		$( food_quntitytopass ).val( foodquntity );
 		
 	}
 	

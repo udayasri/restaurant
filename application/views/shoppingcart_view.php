@@ -517,7 +517,7 @@ padding:0px;
 				{
 					echo '<tr>';
 				    echo '<td>'; echo $list[$i][$j]->food_name; echo '</div></td>';
-					echo '<td>  <div contenteditable id ="food_quntity'.$i.'" class = "food_quntitychange">'; echo '1'; ; echo '</div></td>';
+					echo '<td>  <div contenteditable id ="food_quntity'.$i.'" class = "food_quntitychange" style = "color:blue;font-weight:bold;">'; echo '1'; ; echo '</div></td>';
 					echo '<td>'; echo '<div id ="food_price'.$i.'">'. $list[$i][$j]->food_price. '</div>'; echo '</td>';
 					echo '<td> <a href="'.base_url().'shoppingcart/removefood/'.$list[$i][$j]->food_id.'"><img src="'. base_url().'assets/img/delete.png" style="float:left; margin-top:9px; margin-right:9px; cursor:pointer" id="x" class="delete_image del"/></a> </td>';
 				  	echo '</tr>';

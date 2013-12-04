@@ -689,7 +689,7 @@ div.active_nav_widget div.input_padding
 #meal_builder, #search {
     float: right;
     background: transparent url(../images/backgrounds/topbar_spacer.png) repeat-y left top;
-    padding: 2px 17px 0px 17px;
+    padding: 0px 17px 0px 17px;
     height: 32px;
     line-height: 30px;
     color: #A6A6A3;
