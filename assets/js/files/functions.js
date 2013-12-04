@@ -729,6 +729,21 @@ $(function() {
 			"oPaginate": { "sFirst": "First", "sLast": "Last", "sNext": ">", "sPrevious": "<" }
 		}
     });
+    
+    
+	oTable = $('#order_table').dataTable({
+		"bJQueryUI": false,
+		"bAutoWidth": false,
+		"bSort": false,
+		"sPaginationType": "full_numbers",
+		"sDom": '<"datatable-header"fl>t<"datatable-footer"ip>',
+		"oLanguage": {
+			"sSearch": "<span>Filter records:</span> _INPUT_",
+			"sLengthMenu": "<span>Show entries:</span> _MENU_",
+			"oPaginate": { "sFirst": "First", "sLast": "Last", "sNext": ">", "sPrevious": "<" }
+		}
+		
+    });
 
 
 	oTable = $(".media-table").dataTable({

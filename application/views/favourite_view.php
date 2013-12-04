@@ -444,8 +444,7 @@ vertical-align:top;
 			            <input type="radio" name="size" value="L">L</li>
 			        <li style="list-style: none;">
 			            <input type="radio" name="size" value="M">M</li>
-			        <li style="list-style: none;">
-			            <input type="radio" name="size" value="S">S</li>
+			    
 			    </ul>';		
 					
 					echo '</div>';

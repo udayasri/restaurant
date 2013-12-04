@@ -6,7 +6,9 @@
 <title>Macdonald Admin Panel</title>
 
 <?php include 'header.php';?>
+<script>
 
+</script>
 
 </head>
 
@@ -77,7 +79,7 @@
                 <div class="widget">
                 	<div class="navbar"><div class="navbar-inner"><h6>Orders Information</h6></div></div>
                     <div class="table-overflow">
-                        <table class="table table-striped table-bordered" id="data-table">
+                        <table class="table table- table-bordered" id="order_table">
                             <thead>
                                 <tr>
                                     <th>Ordered By </th>
