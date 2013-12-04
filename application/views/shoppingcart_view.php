@@ -523,8 +523,15 @@ padding:0px;
 				  	echo '</tr>';
 					echo '<input type="hidden" name="food_priceamount1'.$i.'" id="food_priceamount1'.$i.'" value="'.$list[$i][$j]->food_price.'">'; //set the value of price of 1 food item
 					
-					
-					echo '<input type="hidden" name="food_nametopass'.$i.'" id=food_nametopass'.$i.'" value="'.$list[$i][$j]->food_name.'">';
+					if( $list[$i][$j]->food_category == 1 && ( $this->session->userdata( 'size' ) ) != null )
+					{
+						echo '<input type="hidden" name="food_nametopass'.$i.'" id=food_nametopass'.$i.'" value="'.$list[$i][$j]->food_name.' - '.$this->session->userdata( 'size' ).'">';
+					}
+					else
+					{
+						echo '<input type="hidden" name="food_nametopass'.$i.'" id=food_nametopass'.$i.'" value="'.$list[$i][$j]->food_name.'">';
+					}
+
 					echo '<input type="hidden" name="food_pricetopass'.$i.'" id="food_pricetopass'.$i.'" value="'.$list[$i][$j]->food_price.'">';
 					echo '<input type="hidden" name="food_quntitytopass'.$i.'" id="food_quntitytopass'.$i.'" value="1">';
 					

@@ -70,11 +70,10 @@ class Userlogin extends CI_Controller
 			//if username & passwords are empty or bad inputs these json data will be passed to ajax_admin_login.js.
 			//then the error messages will displayed.
 		
-			$output = '{"cutomername":"'.form_error('cutomername').'",
-			"custpass":"'.form_error('custpass').'"}';
-	
+			$output = '{ "cutomername":"'.form_error('cutomername').'","custpass":"'.form_error('custpass').'" }';
+			
 			echo $output;
-			$this->session->sess_destroy();
+			//$this->session->sess_destroy();
 			
 		}
 	}

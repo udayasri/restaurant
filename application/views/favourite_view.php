@@ -110,6 +110,31 @@
 <META name="_breadcrumb" content="/ca/en/menu/full menu/breakfast" />
 
 <?php include 'frontend_header.php'?>
+
+<script>
+var baseurl =  "<?php echo base_url() ?>";
+	$("input:radio[name=size]").live('click',function() 
+	{
+    	//var value = $(this).val();
+    	
+    	var form_data = { 
+    		size: $(this).val() };
+    	
+    	$.ajax({
+			type: "GET",
+			url: baseurl+"shoppingcart/addSize", 
+			// dataType: "json",
+			data : form_data ,
+			cache:false,
+			success: 
+          		function(){}
+         });
+	});
+
+</script>
+
+
+
 <title>Favourite :: McDonalds</title>
 
 <style>
@@ -441,9 +466,9 @@ vertical-align:top;
 					echo '
 					<ul  id="navlist" style="padding:0px">
 			        <li style="list-style: none;">
-			            <input type="radio" name="size" value="L">L</li>
+			            <input type="radio" name="size" value="Large">L</li>
 			        <li style="list-style: none;">
-			            <input type="radio" name="size" value="M">M</li>
+			            <input type="radio" name="size" value="Medium">M</li>
 			    
 			    </ul>';		
 					

@@ -137,5 +137,12 @@ class Shoppingcart extends CI_Controller
 			redirect('userlogin');
 		}
 	}
+
+	public function addSize()
+	{
+		$this->session->unset_userdata( 'size' );
+		$this->session->set_userdata( 'size', $_GET['size'] );
+		echo 'ok';
+	}
 	
 }

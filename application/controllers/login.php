@@ -69,7 +69,7 @@ class Login extends CI_Controller
 			{
 				echo '{"registration" : "falied"}'; //if something happern during the user validation process ,this json data will pass to create error messages.
 				//echo "<script>$().toastmessage('showErrorToast', 'You are not a registered user!');<script>";
-				$this->session->sess_destroy(); 
+				//$this->session->sess_destroy(); 
 			}
 			
 		}
@@ -83,7 +83,7 @@ class Login extends CI_Controller
 			"password":"'.form_error('password').'"}';
 	
 			echo $output;
-			$this->session->sess_destroy();
+			//$this->session->sess_destroy();
 			// $this->session->set_flashdata('login',form_error('username') );
 			// $this->session->set_flashdata('login2',form_error('password') );
 			//index();
