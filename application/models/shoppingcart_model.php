@@ -15,7 +15,7 @@ class Shoppingcart_model extends CI_Model {
 				$id = mysql_insert_id();
 				
 				//echo $id;
-				return true;
+				return $id ;
 			}
 			else{
 				return false;

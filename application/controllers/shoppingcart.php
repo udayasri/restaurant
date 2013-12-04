@@ -103,7 +103,7 @@ class Shoppingcart extends CI_Controller
 					$foodquantity = $this->input->post('food_quntitytopass'.$i);
 					
 					$total += intval( $foodprice );
-					$items = $foodname.$i." - ".$foodquantity.$i.",";
+					$items .= $foodname." - ".$foodquantity.", ";
 					
 				}
 				$status = 1 ;
@@ -116,14 +116,19 @@ class Shoppingcart extends CI_Controller
 					
 					$result = $this->shoppingcart_model->insertorder( $query, $params );
 					
+					//$this->view_data['order_id'] = $result;
+					
 					$params2 = array( $items, $order_date, $total );
 					
 					$query2 = 'INSERT INTO report ( order_description, order_date, order_total ) 
 					VALUES( ?,?,? )';
 					
-					$result = $this->shoppingcart_model->insertorder( $query2, $params2 );
+					$result2 = $this->shoppingcart_model->insertorder( $query2, $params2 );
 					
-					redirect('ordersuccess');
+					//$this->session->unset_userdata( 'shoppingcart_food_id' );
+					//$this->load->view( 'ordersuccess_view.php' , $this->view_data );
+					$this->session->set_userdata( 'order_id', $result );
+					redirect('ordersuccess' , $this->view_data );
 			}
 			
 		}

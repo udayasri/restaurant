@@ -13,7 +13,12 @@ class Ordersuccess extends CI_Controller
 	public function index()
 	{
 		$this->session->unset_userdata( 'shoppingcart_food_id' );	
-		$this->load->view( 'ordersuccess_view.php' );	
+		
+		$this->view_data['order_id'] = $this->session->userdata( 'order_id' );;
+		
+		$this->session->unset_userdata( 'order_id' );;
+		
+		$this->load->view( 'ordersuccess_view.php',$this->view_data );	
 		
 		
 	}

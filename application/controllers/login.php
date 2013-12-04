@@ -36,10 +36,11 @@ class Login extends CI_Controller
 			
 			$this->load->model('loginmodel');
 			$valideuser = $this->loginmodel->veryfy_user($username,$password);
-			$userinfo = $valideuser->result_array();
+			
 
 			if($valideuser == true)
 			{
+				//$userinfo = $valideuser->result_array();
 				$userinfo = $valideuser->result_array();
 			 
 				foreach ($userinfo as $row) 

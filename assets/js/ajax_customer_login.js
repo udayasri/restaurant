@@ -31,11 +31,11 @@ $('#cust_login').live('click',function()
 					else{
 						if(data.cutomername)
 						{
-							alert(data.cutomername);
+							alert( $(data.cutomername).text() );
 						}
 						if(data.custpass)
 						{
-							alert(data.custpass);
+							alert( $(data.custpass).text() );
 							
 						}
 					}

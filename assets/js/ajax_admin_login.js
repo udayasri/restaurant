@@ -27,22 +27,20 @@ $('#login_submit').live('click',function()
 			 		}
 					
 					else if( data.registration == "falied" ){
-						//$().toastmessage('showErrorToast', 'You are not a registered user!');
 						alert('please enter a correct user name & password');
 						}
 						
 					else{
 						
 						//if the user name is wrong this will alert the error message
-						if(data.admin_username){
-						//$().toastmessage('showWarningToast', data.admin_username);
-							alert(data.admin_username);
+						if(data.username){
+							alert( $(data.username).text() );
 						}
 						
 						//if the password is wrong this will alert the error message
-						if(data.admin_password){
-							//$().toastmessage('showWarningToast', data.admin_password);
-							alert(data.admin_password);
+						if(data.password){
+							
+							alert( $(data.password).text() );
 							
 						}
 					}

@@ -395,6 +395,7 @@ padding:0px;
     <div style="color:#000;background:#ffffff; margin-top:0px; padding:42px; -moz-border-radius: 0px 0px 10px 10px; -webkit-border-radius:0px 0px 10px 10px; border-radius: 0px 0px 10px 10px; height: 100px">
         
     	<h3>Thank you for placing an order. You'll be contact soon from our staff member</h3>
+    	<h3>You order id : <?php echo $order_id+1000 ; ?> has been confirmed please proceed to the counter to collect it</h3>
  
     </div>
 
