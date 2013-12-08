@@ -82,6 +82,7 @@
                         <table class="table table- table-bordered" id="order_table">
                             <thead>
                                 <tr>
+                                	<th>Ordered Id </th>
                                     <th>Ordered By </th>
                                     <th>Contact</th>
                                     <th>Items</th>
@@ -94,7 +95,9 @@
                             <?php 
                             foreach ($orderDetails as $row) 
 						  	{
+						  		
 						  		echo '<tr>';
+									echo '<td>'; 	echo $row->order_id+1000 ;echo '</td>';
 	                                echo '<td>'; 	echo $row->ordered_by ;		echo '</td>';
 	                                echo '<td>'; 	echo $row->contact; 		echo '</td>';
 	                                echo '<td>'; 	echo $row->items; 			echo '</td>';

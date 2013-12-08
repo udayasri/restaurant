@@ -433,7 +433,7 @@ vertical-align:top;
 					echo '<div style = "height:160px">';
 			  		echo '<img src = "'.base_url().'assets/img/foods/'.$row->food_image.'">';
 					echo '<p style="text-align:center"><span class="rtStyle_image_title">';
-					echo $row->food_name; echo '</br>'; echo $row->food_price."$";
+					echo $row->food_name; echo '</br>'; echo $row->food_price."RM";
 					echo '</span>';
 					echo '</p>';
 					

@@ -246,7 +246,7 @@ var baseurl =  "<?php echo base_url() ?>";
 						  		echo '<tr>';
 	                                echo '<td>'; echo '<img src = "'.base_url().'assets/img/foods/'.$row->food_image.'">';	echo '</td>';
 	                                echo '<td>'; echo $row->food_name; 		echo '</td>';
-	                                echo '<td>'; echo $row->food_price; 			echo '</td>';
+	                                echo '<td>'; echo $row->food_price."RM"; 			echo '</td>';
 	                                echo '<td>'; echo $row->category_name; 	echo '</td>';
 	                                echo '<td>';
 	                                        echo '<ul class="table-controls">

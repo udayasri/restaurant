@@ -60,7 +60,7 @@ class Userlogin extends CI_Controller
 			{
 				echo '{"registration" : "falied"}'; //if something happern during the user validation process ,this json data will pass to create error messages.
 				//echo "<script>$().toastmessage('showErrorToast', 'You are not a registered user!');<script>";
-				$this->session->sess_destroy(); 
+				//$this->session->sess_destroy(); 
 			}
 			
 		}

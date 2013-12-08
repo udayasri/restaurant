@@ -146,7 +146,7 @@
 	                                echo '<td>'; 	echo $order_code;			echo '</td>';
 	                                echo '<td>'; 	echo $row->order_description; 			echo '</td>';
 									echo '<td>'; 	echo $row->order_date; 			echo '</td>';
-	                                echo '<td>'; 	echo $row->order_total."$" 		; echo '</td>';
+	                                echo '<td>'; 	echo $row->order_total."RM" 		; echo '</td>';
                                 echo '</tr>';
 						  		
 								$totalamount += $row->order_total;
@@ -196,7 +196,7 @@
 		                    <div class="span6">
 		                    	<div class="total pull-right">
 			                        <span>Total Amount</span>
-			                        <strong class="text-error"><?php echo $totalamount; ?>$</strong>
+			                        <strong class="text-error"><?php echo $totalamount; ?>RM</strong>
 		                        </div>
 		                    </div>
 		                </div>
